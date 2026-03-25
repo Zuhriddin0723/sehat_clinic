@@ -1,0 +1,50 @@
+// ignore_for_file: constant_identifier_names
+
+class AppIcons{
+  static const big_notification = "assets/icons/big_notification.png";
+  static const calendar = "assets/icons/calendar.png";
+  static const clock = "assets/icons/clock.png";
+  static const file = "assets/icons/file.png";
+  static const gift = "assets/icons/gift.svg";
+  static const i = "assets/icons/i.png";
+  static const link = "assets/icons/link.png";
+  static const message = "assets/icons/message.png";
+  static const notification = "assets/icons/notification.png";
+  static const search = "assets/icons/search.png";
+  static const star = "assets/icons/star.png";
+  static const body = "assets/icons/body.png";
+  static const bottle = "assets/icons/bottle.png";
+  static const brain = "assets/icons/brain.png";
+  static const eye = "assets/icons/eye.png";
+  static const ear = "assets/icons/ear.png";
+  static const hair = "assets/icons/hair.png";
+  static const heart = "assets/icons/heart.png";
+  static const lung = "assets/icons/lung.png";
+  static const plaster = "assets/icons/plaster.png";
+  static const teeth = "assets/icons/teeth.png";
+  static const arrow_right = "assets/icons/arrow_right.svg";
+  static const image = "assets/icons/image 1.png";
+  static const clutch = "assets/icons/clutch.png";
+  static const like = "assets/icons/like.png";
+  static const person = "assets/icons/person.png";
+  static const hospital = "assets/icons/hospital.svg";
+  static const location = "assets/icons/location.svg";
+  static const time_user = "assets/icons/time_user.svg";
+  static const translation = "assets/icons/translation.svg";
+  static const user_multiple = "assets/icons/user_multiple.svg";
+  static const cardmoon = "assets/icons/cardmoon.svg";
+  static const chevron_down = "assets/icons/chevron_down.svg";
+  static const user = "assets/icons/user.svg";
+  static const home = "assets/icons/home.svg";
+  static const active_home = "assets/icons/active_home.svg";
+  static const analyses = "assets/icons/analyses.svg";
+  static const active_analyses = "assets/icons/active_analyses.svg";
+  static const services = "assets/icons/services.svg";
+  static const active_services = "assets/icons/active_services.svg";
+  static const booking = "assets/icons/booking.svg";
+  static const active_booking = "assets/icons/active_booking.svg";
+  static const chat = "assets/icons/chat.svg";
+  static const call = "assets/icons/call.svg";
+  static const cancel = "assets/icons/cancel.svg";
+  static const stars = "assets/icons/stars.svg";
+}

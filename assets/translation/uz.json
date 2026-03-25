@@ -1,0 +1,143 @@
+{
+  "health_center" : "SALOMATLIK MARKAZI",
+
+  "onboarding_title_color" : "Tasdiqlangan ",
+
+  "onboarding_title" : "professional shifokorlar",
+  "onboarding_subtitle" : "Har bir shifokor sertifikatlangan, ekspertlar tomonidan ko'rib chiqilgan va sizning xavfsizligingiz uchun sinchkovlik bilan tekshirilgan",
+
+  "onboarding_title2_color" : "Premium ",
+  "onboarding_title2" : "professional sog'liqni saqlash",
+  "onboarding_subtitle2" : "Jahon darajasidagi qulayliklar, ilg'or texnologiyalar va akkreditatsiyalangan tibbiy yordam - barchasi bir joyda",
+
+  "onboarding_title3_color" : "Sizning mukofotlaringiz ",
+  "onboarding_title3" : "bizning tibbiy yordamimizni tanlaganingiz uchun",
+  "onboarding_subtitle3" : "Har safar uchrashuvga yozilganingizda yoki do'stlaringizni taklif qilganingizda sodiqlik ballarini to'plang. Xizmatlar uchun to'lov qilish uchun ballardan foydalaning.",
+
+  "next" : "Keyingi",
+
+  "login_title" : "Telefon raqamingizdan boshlaylik",
+  "login_subtitle" : "Shaxsingizni tasdiqlash uchun sizga kod yuboramiz.",
+  "phone_number" : "Telefon raqami",
+  "have_an_account" : "Akkauntingiz bormi?",
+  "login" : "Kirish",
+
+  "register" : "Ro'yxatdan o'tish",
+  "don't_have_an_account" : "Akkauntingiz yo'qmi?",
+
+  "verify_title" : "Raqamingizni tasdiqlash",
+  "verify_subtitle" : "\n+998 90 123 45 67 raqamiga yuborilgan 6 xonali kodni kiriting. Iltimos, uni kiriting",
+
+  "get_code" : "Kodni olmadingizmi?",
+  "resend_code" : "Kodni qayta yuborish",
+
+  "continue" : "Davom etish",
+
+  "complete_profile" : "Profilingizni to'ldiring",
+  "account_title" : "Ushbu ma'lumot bizga tajribangizni shaxsiylashtirishga va yaxshiroq xizmat ko'rsatishni ta'minlashga yordam beradi. parvarish",
+
+  "full_name" : "To'liq ism",
+  "name" : "Ism",
+  "gender" : "Jinsi",
+  "male" : "Erkak",
+  "female" : "Ayol",
+  "date_of_birth" : "Tug'ilgan sana",
+
+  "search" : "Xizmat yoki shifokorlarni qidirish...",
+  "doctor's" : "Rejalashtirilgan shifokor qabuli",
+  "feb" : "Fevral",
+  "view" : "Tafsilotlarni ko'rish",
+  "events" : "Tadbirlar",
+  "all" : "Hammasi",
+  "dentist" : "Tish shifokori",
+
+  "services" : "Xizmatlar",
+  "cardiology" : "Kardiologiya",
+  "stamatology" : "Stomatologiya",
+  "neurology" : "Nevrologiya",
+  "ophthalmology" : "Oftalmologiya",
+  "laboratory" : "Laboratoriya",
+  "dermatology" : "Dermatologiya",
+  "otolaryngology" : "Otolaringologiya",
+  "orthopedics" : "Ortopediya",
+  "endocrinology" : "Endokrinologiya",
+  "pulmonology" : "Pulmonologiya",
+
+  "pediatrician" : "Pediatr",
+  "orthopedic_surgeon" : "Ortopedik jarroh",
+  "cardiologist" : "Kardiolog",
+  "dermatologist" : "Dermatolog",
+
+  "meet_our_doctors" : "Shifokorlarimiz bilan tanishing",
+  "diagnostics" : "Diagnostics",
+  "why_patients" : "Nega bemorlar bizni tanlashadi?",
+
+  "advanced_technology" : "Ilg'or texnologiya",
+  "precision_and_safety" : "Aniqlik va xavfsizlik",
+
+  "personalized_care" : "Shaxsiylashtirilgan parvarish",
+  "plans_for_your_condition" : "Sizning holatingiz uchun rejalar parvarish",
+
+  "minimal_discomfort" : "Minimal noqulaylik",
+
+  "comfort_first_methods" : "Comfort-first usullar",
+
+  "treatment_gallery" : "Davolash galereyasi",
+  "location" : "Joylashuv",
+
+  "name_of_the_hospital" : "Kasalxona nomi",
+  "schedule_checkup" : "Tekshiruvni rejalashtirish",
+  "doctor_information" : "Shifokor haqida ma'lumot",
+  "language_spoken" : "Og'zaki til",
+  "work_experience" : "Ish tajribasi",
+
+  "more_about_the_doctor" : "Shifokor haqida ko'proq",
+  "working_time" : "Ish vaqti",
+
+  "number_of_patients_treated" : "Davolangan bemorlar soni",
+
+  "xray_informations" : "Rentgen ma'lumotlari",
+  "x_ray_informations" : "Rentgen - bu tananing ichki qismining tasvirlarini yaratish uchun past dozali nurlanishdan foydalanadigan tez va og'riqsiz diagnostika tasvirlash protsedurasi. Odatda suyaklar, ko'krak qafasi, bo'g'imlar va ayrim ichki organlarni tekshirish uchun ishlatiladi.",
+  "my_bookings" : "Mening buyurtmalarim",
+  "upcoming" : "Upcoming",
+  "history" : "Tarix",
+  "complete" : "Complete",
+  "canceled" : "Canceled",
+
+  "hours" : "soat",
+
+  "booking_doctor" : "Boking doctor",
+  "select_date" : "Sanani tanlang",
+  "select_language": "Tilni tanlang",
+  "uzbek": "O'zbek",
+  "russian": "Rus",
+
+  "english": "Inglizcha",
+
+  "phone_number_hint": "Telefon raqami",
+  "heart_health_matters": "Yurak salomatligi muhim",
+  "cardiovascular_subtitle": "Yurak-qon tomir kasalliklarini oldini olish strategiyalarini tushunish..",
+  "sehat_clinic": "Sehat clinic",
+
+  "amir_temur_square": "Amir Temur maydoni, Toshkent, O'zbekiston",
+  "mirzo_ulugbek_street": "Mirzo Ulug'bek Do'rmon ko'chasi 20-A",
+  "working_time_range": "Dushanbadan shanbagacha soat 08:30 dan 17:00 gacha",
+  "five_year": "5 yil",
+  "hundred": "100",
+  "language_spoken_val": "O'zbek, ingliz",
+
+  "home" : "Bosh Sahifa",
+  "booking" : "Buyurtmalar",
+  "analyses" : "Tahlillar",
+  "chat" : "Chat",
+  "patient_information" : "Bemor haqida ma'lumot",
+  "patient_ID" : "Bemor identifikatori",
+  "call_center" : "Qo'ng'iroq markazi",
+  "cancel" : "Bekor qilish",
+  "reschedule" : "Qayta rejalashtirish",
+  "rate_the_doctor" : "Shifokorga baho bering",
+  "evaluation_for_doctor" : "Shifokor uchun baholash",
+  "your_rating_the_doctor" : "Shifokorga bergan bahoingiz",
+  "your_opinion_about_the_doctor" : "Shifokor haqidagi fikringiz",
+  "department" : "bo'lim"
+}
