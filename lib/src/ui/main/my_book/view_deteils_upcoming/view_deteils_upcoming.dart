@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../app_theme/appStyles/app_styles.dart';
+import '../../../../app_theme/app_colors/app_colors.dart';
 import '../../../../app_theme/app_icons/app_icons.dart';
 import '../../../../app_theme/app_images/app_images.dart';
 
@@ -23,7 +25,7 @@ class ViewDetailsUpcoming extends StatelessWidget {
           },
           child: Icon(Icons.chevron_left_sharp),
         ),
-        title: Text("view".tr(), style: TextStyle(fontSize: 12.sp)),
+        title: Text("view".tr(), style: AppStyles.medium16(AppColors.black)),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -52,14 +54,11 @@ class ViewDetailsUpcoming extends StatelessWidget {
                               children: [
                                 Text(
                                   "Dr. Noah Thomson",
-                                  style: TextStyle(fontSize: 8.sp),
+                                  style: AppStyles.medium14(AppColors.black),
                                 ),
                                 Text(
                                   "dentist".tr(),
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 7.sp,
-                                  ),
+                                  style: AppStyles.regular12(AppColors.grey)
                                 ),
                               ],
                             ),
@@ -81,11 +80,11 @@ class ViewDetailsUpcoming extends StatelessWidget {
                             children: [
                               Image.asset(AppIcons.calendar),
                               Gap(5.w),
-                              Text("Feb.15", style: TextStyle(fontSize: 10.sp)),
+                              Text("Feb.15", style: AppStyles.medium12(AppColors.black)),
                               Gap(13.w),
                               Image.asset(AppIcons.clock),
                               Gap(5.w),
-                              Text("15:30",style: TextStyle(fontSize: 10.sp),)
+                              Text("15:30",style: AppStyles.medium12(AppColors.black),)
                             ],
                           ),
                         ),
@@ -108,7 +107,7 @@ class ViewDetailsUpcoming extends StatelessWidget {
                     children: [
                       Text(
                         "patient_information".tr(),
-                        style: TextStyle(fontSize: 13.sp),
+                        style: AppStyles.medium16(AppColors.black),
                       ),
                       Gap(10.h),
                       _doctorInformation(
@@ -133,7 +132,7 @@ class ViewDetailsUpcoming extends StatelessWidget {
                           color: Colors.grey[200],
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0.h),
                           child: Row(
                             children: [
                               Padding(
@@ -146,14 +145,11 @@ class ViewDetailsUpcoming extends StatelessWidget {
                                 children: [
                                   Text(
                                     "location".tr(),
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 10.sp,
-                                    ),
+                                    style: AppStyles.regular14(AppColors.grey)
                                   ),
                                   Text(
                                     "amir_temur_square".tr(),
-                                    style: TextStyle(fontSize: 8.sp),
+                                    style: AppStyles.medium14(AppColors.black),
                                   ),
                                 ],
                               ),
@@ -168,7 +164,8 @@ class ViewDetailsUpcoming extends StatelessWidget {
                           Gap(10.h),
                           Center(
                             child: Container(
-                              height: 167,
+                              height: 167.h,
+                              width: 331.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15.r),
                               ),
@@ -189,7 +186,8 @@ class ViewDetailsUpcoming extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 125,
+                                    width: 331.w,
+                                    height: 125.h,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.r),
@@ -205,10 +203,7 @@ class ViewDetailsUpcoming extends StatelessWidget {
                                   Gap(10.h),
                                   Text(
                                     "mirzo_ulugbek_street".tr(),
-                                    style: TextStyle(
-                                      fontSize: 10.sp,
-                                      color: Colors.grey,
-                                    ),
+                                    style: AppStyles.regular12(AppColors.grey)
                                   ),
                                   Gap(10.h),
                                 ],
@@ -226,18 +221,18 @@ class ViewDetailsUpcoming extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        height: 100,
+        height: 100.h,
         color: Colors.white,
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 20),
+          padding: EdgeInsets.only(bottom: 20.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                height: 50,
-                width: 175,
+                height: 50.h,
+                width: 174.w,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
+                  borderRadius: BorderRadius.circular(15.r),
                   color: Colors.red,
                 ),
                 child: Center(
@@ -249,18 +244,18 @@ class ViewDetailsUpcoming extends StatelessWidget {
                       Gap(5.w),
                       Text(
                         "cancel".tr(),
-                        style: TextStyle(color: Colors.white, fontSize: 10.sp),
+                        style: AppStyles.regular14(AppColors.white),
                       ),
                     ],
                   ),
                 ),
               ),
-              Gap(15.w),
+              Gap(8.w),
               Container(
-                height: 50,
-                width: 175,
+                height: 50.h,
+                width: 174.w,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
+                  borderRadius: BorderRadius.circular(15.r),
                   color: Color(0xFF001E62),
                 ),
                 child: Center(
@@ -268,11 +263,11 @@ class ViewDetailsUpcoming extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(AppIcons.calendar,color: Colors.white,),
+                      Image.asset(AppIcons.calendar,color: Colors.white,height: 23.h,),
                       Gap(5.w),
                       Text(
                         "reschedule".tr(),
-                        style: TextStyle(color: Colors.white, fontSize: 10.sp),
+                        style: AppStyles.regular14(AppColors.white),
                       ),
                     ],
                   ),
@@ -288,23 +283,23 @@ class ViewDetailsUpcoming extends StatelessWidget {
   Widget _doctorInformation(String icon, String title, String subtitle) {
     return Container(
       margin: EdgeInsets.only(bottom: 10.h),
-      height: 40,
+      height: 40.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
         color: Colors.grey[200],
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
+        padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 5.h, top: 5.h),
         child: Row(
           children: [
-            SvgPicture.asset(icon, height: 20),
-            Gap(10.sp),
+            SvgPicture.asset(icon, height: 20.h),
+            Gap(10.w),
             Text(
               title,
-              style: TextStyle(color: Colors.grey[600], fontSize: 10.sp),
+              style: AppStyles.regular14(AppColors.grey),
             ),
             Spacer(),
-            Text(subtitle, style: TextStyle(fontSize: 10.sp)),
+            Text(subtitle, style: AppStyles.medium14(AppColors.black)),
           ],
         ),
       ),
