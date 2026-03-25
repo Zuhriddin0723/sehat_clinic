@@ -31,7 +31,7 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
           },
           child: Icon(Icons.chevron_left_sharp),
         ),
-        title: Text("view".tr(), style: TextStyle(fontSize: 12.sp)),
+        title: Text("view".tr(), style: AppStyles.medium16(AppColors.black)),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -315,11 +315,11 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                                     "your_opinion_about_the_doctor".tr(),
                                     style: AppStyles.regular14(AppColors.black),
                                   ),
-                                  Gap(10.h),
+                                  Gap(15.h),
                                   TextField(
                                     maxLines: 5,
                                     decoration: InputDecoration(
-                                      hintText: "Comment...",
+                                      hintText: "comment".tr(),
                                       hintStyle: AppStyles.regular14(AppColors.grey),
                                       border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(10),
@@ -359,23 +359,23 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
   Widget _doctorInformation(String icon, String title, String subtitle) {
     return Container(
       margin: EdgeInsets.only(bottom: 10.h),
-      height: 40,
+      height: 40.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10.r),
         color: Colors.grey[200],
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5, top: 5),
+        padding: EdgeInsets.only(left: 10.w, right: 10.w, bottom: 5.h, top: 5.h),
         child: Row(
           children: [
-            SvgPicture.asset(icon, height: 20),
-            Gap(10.sp),
+            SvgPicture.asset(icon, height: 20.h),
+            Gap(10.w),
             Text(
               title,
-              style: TextStyle(color: Colors.grey[600], fontSize: 10.sp),
+              style: AppStyles.regular14(AppColors.grey),
             ),
             Spacer(),
-            Text(subtitle, style: TextStyle(fontSize: 10.sp)),
+            Text(subtitle, style: AppStyles.medium14(AppColors.black)),
           ],
         ),
       ),

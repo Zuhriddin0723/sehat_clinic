@@ -132,6 +132,7 @@
   "your_opinion_about_the_doctor" : "Your opinion about the doctor",
   "department" : "Department",
   "are_you_sure" : "Are you sure you want to cancel the queue?",
+  "comment" : "Comment...",
   "no" : "No",
   "Yes" : "Yes"
 }
