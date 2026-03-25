@@ -47,4 +47,5 @@ class AppIcons{
   static const call = "assets/icons/call.svg";
   static const cancel = "assets/icons/cancel.svg";
   static const stars = "assets/icons/stars.svg";
+  static const error = "assets/icons/error.svg";
 }

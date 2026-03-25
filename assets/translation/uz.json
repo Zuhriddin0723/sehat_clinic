@@ -139,5 +139,8 @@
   "evaluation_for_doctor" : "Shifokor uchun baholash",
   "your_rating_the_doctor" : "Shifokorga bergan bahoingiz",
   "your_opinion_about_the_doctor" : "Shifokor haqidagi fikringiz",
-  "department" : "bo'lim"
+  "department" : "bo'lim",
+  "are_you_sure" : "Navbatni bekor qilmoqchimisiz?",
+  "no" : "Yo'q",
+  "yes" : "Ha"
 }

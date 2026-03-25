@@ -131,5 +131,8 @@
   "evaluation_for_doctor" : "Оценка для врача",
   "your_rating_the_doctor" : "Ваша оценка врача",
   "your_opinion_about_the_doctor" : "Ваше мнение о враче",
-  "department" : "Отдел"
+  "department" : "Отдел",
+  "are_you_sure" : "Вы уверены, что хотите отменить очередь?",
+  "no" : "Нет",
+  "yes" : "Да"
 }

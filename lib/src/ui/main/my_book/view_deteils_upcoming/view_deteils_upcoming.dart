@@ -228,25 +228,30 @@ class ViewDetailsUpcoming extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: 50.h,
-                width: 174.w,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.r),
-                  color: Colors.red,
-                ),
-                child: Center(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(AppIcons.cancel,height: 25,),
-                      Gap(5.w),
-                      Text(
-                        "cancel".tr(),
-                        style: AppStyles.regular14(AppColors.white),
-                      ),
-                    ],
+              InkWell(
+                onTap: (){
+                  _showExitDialog(context);
+                },
+                child: Container(
+                  height: 50.h,
+                  width: 174.w,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.r),
+                    color: Colors.red,
+                  ),
+                  child: Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(AppIcons.cancel,height: 25,),
+                        Gap(5.w),
+                        Text(
+                          "cancel".tr(),
+                          style: AppStyles.regular14(AppColors.white),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -303,6 +308,84 @@ class ViewDetailsUpcoming extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+  void _showExitDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: AppColors.white,
+          insetPadding: EdgeInsets.symmetric(horizontal: 10.w),
+          contentPadding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 15.w),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25.r),
+          ),
+          title: Column(
+            children: [
+              Container(
+                height: 60.h,
+                width: 60.w,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle, // BorderRadius o'rniga doira qilish
+                  color: AppColors.greySoft,
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(15.h),
+                  child: SvgPicture.asset(AppIcons.error),
+                ),
+              ),
+            ],
+          ),
+          content: Text(
+            "are_you_sure".tr(),
+            textAlign: TextAlign.center, // Matnni o'rtaga qo'yish
+            style: AppStyles.regular16(AppColors.black),
+          ),
+          actionsPadding: EdgeInsets.only(bottom: 20.h, left: 10.w, right: 10.w),
+          actions: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // YO'Q TUGMASI
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    width: 140.w, // Biroz qisqartirildi (sig'ishi uchun)
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.r),
+                      color: AppColors.black.withOpacity(0.05), // Ko'rinadiganroq rang
+                    ),
+                    child: Center(
+                      child: Text("no".tr(), style: AppStyles.medium14(AppColors.black)),
+                    ),
+                  ),
+                ),
+                Gap(10.w),
+                // HA TUGMASI
+                GestureDetector(
+                  onTap: () {
+                    // Bu yerga amalni bajaring
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    width: 140.w, // Biroz qisqartirildi
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25.r),
+                      color: AppColors.primary,
+                    ),
+                    child: Center(
+                      child: Text("yes".tr(), style: AppStyles.medium14(AppColors.white)),
+                    ),
+                  ),
+                ),
+              ],
+            )
+          ],
+        );
+      },
     );
   }
 }

@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../app_theme/appStyles/app_styles.dart';
+import '../../../../app_theme/app_colors/app_colors.dart';
 import '../../../../app_theme/app_icons/app_icons.dart';
 import '../../../../app_theme/app_images/app_images.dart';
 
@@ -58,14 +60,11 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                               children: [
                                 Text(
                                   "Dr. Noah Thomson",
-                                  style: TextStyle(fontSize: 8.sp),
+                                  style: AppStyles.medium14(AppColors.black),
                                 ),
                                 Text(
-                                  "dentist".tr(),
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 7.sp,
-                                  ),
+                                    "dentist".tr(),
+                                    style: AppStyles.regular12(AppColors.grey)
                                 ),
                               ],
                             ),
@@ -87,32 +86,11 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                             children: [
                               Image.asset(AppIcons.calendar),
                               Gap(5.w),
-                              Text("Feb.15", style: TextStyle(fontSize: 10.sp)),
-                              Spacer(),
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.r),
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black12,
-                                      blurRadius: 10,
-                                    ),
-                                  ],
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Row(
-                                    children: [
-                                      Image.asset(AppIcons.file),
-                                      Text(
-                                        "view".tr(),
-                                        style: TextStyle(fontSize: 10.sp),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                              Text("Feb.15", style: AppStyles.medium12(AppColors.black)),
+                              Gap(13.w),
+                              Image.asset(AppIcons.clock),
+                              Gap(5.w),
+                              Text("15:30",style: AppStyles.medium12(AppColors.black),)
                             ],
                           ),
                         ),
@@ -135,7 +113,7 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                     children: [
                       Text(
                         "patient_information".tr(),
-                        style: TextStyle(fontSize: 13.sp),
+                        style: AppStyles.medium16(AppColors.black),
                       ),
                       Gap(10.h),
                       _doctorInformation(
@@ -153,13 +131,14 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                         "name_of_the_hospital".tr(),
                         "sehat_clinic".tr(),
                       ),
+                      Gap(10.h),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.r),
                           color: Colors.grey[200],
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(8.0.h),
                           child: Row(
                             children: [
                               Padding(
@@ -171,15 +150,12 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "location".tr(),
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 10.sp,
-                                    ),
+                                      "location".tr(),
+                                      style: AppStyles.regular14(AppColors.grey)
                                   ),
                                   Text(
                                     "amir_temur_square".tr(),
-                                    style: TextStyle(fontSize: 8.sp),
+                                    style: AppStyles.medium14(AppColors.black),
                                   ),
                                 ],
                               ),
@@ -194,7 +170,8 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                           Gap(10.h),
                           Center(
                             child: Container(
-                              height: 167,
+                              height: 167.h,
+                              width: 331.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15.r),
                               ),
@@ -215,7 +192,8 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                               child: Column(
                                 children: [
                                   Container(
-                                    height: 125,
+                                    width: 331.w,
+                                    height: 125.h,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
                                         topLeft: Radius.circular(10.r),
@@ -230,11 +208,8 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                                   ),
                                   Gap(10.h),
                                   Text(
-                                    "mirzo_ulugbek_street".tr(),
-                                    style: TextStyle(
-                                      fontSize: 10.sp,
-                                      color: Colors.grey,
-                                    ),
+                                      "mirzo_ulugbek_street".tr(),
+                                      style: AppStyles.regular12(AppColors.grey)
                                   ),
                                   Gap(10.h),
                                 ],
@@ -302,16 +277,15 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
 
                                   Text(
                                     "evaluation_for_doctor".tr(),
-                                    style: TextStyle(fontSize: 20.sp),
+                                    style: AppStyles.medium24(AppColors.black),
                                   ),
                                   Gap(10.h),
 
                                   Text(
                                     "your_rating_the_doctor".tr(),
-                                    style: TextStyle(fontSize: 10.sp),
+                                    style: AppStyles.regular14(AppColors.black),
                                   ),
                                   Gap(10.h),
-
                                   /// ⭐ STARS
                                   Row(
                                     children: List.generate(5, (index) {
@@ -339,14 +313,14 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
 
                                   Text(
                                     "your_opinion_about_the_doctor".tr(),
-                                    style: TextStyle(fontSize: 10.sp),
+                                    style: AppStyles.regular14(AppColors.black),
                                   ),
                                   Gap(10.h),
-
                                   TextField(
                                     maxLines: 5,
                                     decoration: InputDecoration(
                                       hintText: "Comment...",
+                                      hintStyle: AppStyles.regular14(AppColors.grey),
                                       border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(10),
                                       ),
@@ -372,7 +346,7 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
               child: Center(
                 child: Text(
                   "rate_the_doctor".tr(),
-                  style: TextStyle(color: Colors.white, fontSize: 12.sp),
+                  style: AppStyles.medium14(AppColors.white),
                 ),
               ),
             ),

@@ -130,5 +130,8 @@
   "evaluation_for_doctor" : "Evaluation for doctor",
   "your_rating_the_doctor" : "Your rating the doctor",
   "your_opinion_about_the_doctor" : "Your opinion about the doctor",
-  "department" : "Department"
+  "department" : "Department",
+  "are_you_sure" : "Are you sure you want to cancel the queue?",
+  "no" : "No",
+  "Yes" : "Yes"
 }
