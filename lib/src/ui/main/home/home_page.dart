@@ -26,128 +26,142 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey.shade100,
       appBar: myFixedAppBar(),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(20.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /// ICONLAR ROW
-              Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Gap(10.h),
+            /// ICONLAR ROW
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Gap(15.w),
                   Image.asset(AppIcons.i),
+                  Gap(15.w),
                   Image.asset(AppIcons.link),
+                  Gap(15.w),
                   Image.asset(AppIcons.message),
+                  Gap(15.w),
                   Image.asset(AppIcons.star),
+                  Gap(15.w),
                   Image.asset(AppIcons.big_notification),
                 ],
               ),
-
-              Gap(20.h),
-              /// doctor card
+            ),
+            /// doctor card
+            Padding(
+              padding: EdgeInsets.all(20.h),
+              child:
               Container(
                 width: 343.w,
                 height: 162.h,
-                padding: EdgeInsets.all(12.w),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
-                  boxShadow: const [
-                    BoxShadow(blurRadius: 10, color: Colors.black12),
-                  ],
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "doctor's".tr(),
-                      style: AppStyles.medium16(AppColors.error),
-                    ),
-                    Gap(7.h),
-                    Row(
-                      children: [
-                        Container(
-                          height: 40,
-                          width: 40,
-                          clipBehavior: Clip.hardEdge,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          child: Image.asset(
-                            AppImages.dentist,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Gap(10.w),
-                        Column(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.all(8.h),
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            Gap(10.h),
                             Text(
-                              "Dr. Noah Thomson",
-                              style: AppStyles.medium14(AppColors.primary)
+                              "doctor's".tr(),
+                              style: AppStyles.medium16(AppColors.error),
                             ),
-                            Container(
-                              margin: EdgeInsets.only(top: 4.h),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6.r),
-                                color: Colors.grey[200],
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.only(top: 5.h,bottom: 5.h,left: 10.w,right: 10.w),
-                                child: Text(
-                                  "dentist".tr(),
-                                    style: AppStyles.regular12(AppColors.primary)
+                            Gap(11.h),
+                            Row(
+                              children: [
+                                Image.asset(AppImages.dentist),
+                                Gap(10.w),
+                                Column(
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "Dr. Noah Thomson",
+                                      style: AppStyles.medium16(AppColors.black),
+                                    ),
+                                    Text(
+                                        "dentist".tr(),
+                                        style: AppStyles.regular12(AppColors.grey)
+                                    ),
+                                  ],
                                 ),
-                              ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                    Gap(10.h),
-                    /// date container
-                    Container(
-                      padding: EdgeInsets.only(left: 10.w,right: 10.w),
-                      height: 44.h,
-                      width: 335.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.r),
-                        color: Colors.grey[100],
                       ),
-                      child: Row(
-                        children: [
-                          Image.asset(AppIcons.calendar),
-                          Gap(5.w),
-                          Text("${"feb".tr()}.15",  style: AppStyles.medium12(AppColors.black)),
-                          Gap(10.w),
-                          Image.asset(AppIcons.clock),
-                          Gap(5.w),
-                          Text("15:30",  style: AppStyles.medium12(AppColors.black)),
-                          const Spacer(),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8.w),
-                            height: 28,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(7.r),
-                              color: Colors.white,
-                            ),
-                            child: Row(
-                              children: [
-                                Image.asset(AppIcons.file),
-                                Gap(4.w),
-                                Text("view".tr(), style: AppStyles.medium12(AppColors.black)),
-                              ],
-                            ),
+                      Gap(10.h),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(15.r),
+                            bottomLeft: Radius.circular(15.r),
                           ),
-                        ],
+                          color: Colors.grey[200],
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(10.h),
+                          child: Row(
+                            children: [
+                              Image.asset(AppIcons.calendar),
+                              Gap(5.w),
+                              Text(
+                                "Feb.14",
+                                style: AppStyles.medium12(AppColors.black),
+                              ),
+                              Gap(10.w),
+                              Image.asset(AppIcons.clock),
+                              Gap(2.w),
+                              Text(
+                                "1.5 hours",
+                                style: AppStyles.medium12(AppColors.black),
+                              ),
+                              Spacer(),
+                              Container(
+                                width: 102.w,
+                                height: 28.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(
+                                    10.r,
+                                  ),
+                                  color: Colors.white,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      AppIcons.file,
+                                      color: Color(0xFF001E62),
+                                    ),
+                                    Gap(3.w),
+                                    Text(
+                                      "view".tr(),
+                                      style: AppStyles.medium12(AppColors.black),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-
-              Gap(10.h),
-              Row(
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20.w,right: 20.w),
+              child: Row(
                 children: [
                   Text("events".tr(),  style: AppStyles.semiBold14(AppColors.black)),
                   const Spacer(),
@@ -157,67 +171,66 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+            ),
 
-              /// Events List
-              SizedBox(
-                height: 300.h,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (ctx, index) {
-                    return Padding(
-                      padding: EdgeInsets.only(left: 10.w),
-                      child: Column(
-                        children: [
-                          Container(
-                            width: 200.w,
-                            height: 133.h,
-                            clipBehavior: Clip.hardEdge,
-                            decoration:  BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10.r),
-                                topLeft: Radius.circular(10.r),
-                              ),
-                            ),
-                            child: Image.asset(AppImages.image, fit: BoxFit.cover),
-                          ),
-                          Container(
-                            width: 200.w,
-                            decoration:  BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [BoxShadow(blurRadius: 10, color: Colors.black12)],
-                              borderRadius: BorderRadius.only(
-                                bottomRight: Radius.circular(10.r),
-                                bottomLeft: Radius.circular(10.r)
-                              )
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(10.w),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Image.asset(AppIcons.calendar),
-                                      Gap(5.w),
-                                      Text("${"feb".tr()} 15, 2024", style: AppStyles.medium12(AppColors.black)),
-                                    ],
-                                  ),
-                                  Text("heart_health_matters".tr(), style: AppStyles.medium16(AppColors.black)),
-                                  Text("cardiovascular_subtitle".tr(), style: AppStyles.regular14(AppColors.grey)),
-                                ],
-                              ),
+            /// Events List
+            SizedBox(
+              height: 300.h,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (ctx, index) {
+                  return Padding(
+                    padding: EdgeInsets.only(left: 15.w),
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 200.w,
+                          height: 133.h,
+                          clipBehavior: Clip.hardEdge,
+                          decoration:  BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(10.r),
+                              topLeft: Radius.circular(10.r),
                             ),
                           ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                          child: Image.asset(AppImages.image, fit: BoxFit.cover),
+                        ),
+                        Container(
+                          width: 200.w,
+                          decoration:  BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(10.r),
+                              bottomLeft: Radius.circular(10.r)
+                            )
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(10.w),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(AppIcons.calendar),
+                                    Gap(5.w),
+                                    Text("${"feb".tr()} 15, 2024", style: AppStyles.medium12(AppColors.black)),
+                                  ],
+                                ),
+                                Text("heart_health_matters".tr(), style: AppStyles.medium16(AppColors.black)),
+                                Text("cardiovascular_subtitle".tr(), style: AppStyles.regular14(AppColors.grey)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
-              Gap(50.h)
-            ],
-          ),
+            ),
+            Gap(50.h)
+          ],
         ),
       ),
     );

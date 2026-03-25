@@ -10,7 +10,7 @@ class AppIcons{
   static const link = "assets/icons/link.png";
   static const message = "assets/icons/message.png";
   static const notification = "assets/icons/notification.png";
-  static const search = "assets/icons/search.png";
+  static const search = "assets/icons/search.svg";
   static const star = "assets/icons/star.png";
   static const body = "assets/icons/body.png";
   static const bottle = "assets/icons/bottle.png";
@@ -48,4 +48,5 @@ class AppIcons{
   static const cancel = "assets/icons/cancel.svg";
   static const stars = "assets/icons/stars.svg";
   static const error = "assets/icons/error.svg";
+  static const download = "assets/icons/download.svg";
 }

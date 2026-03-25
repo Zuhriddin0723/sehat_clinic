@@ -52,7 +52,6 @@ class EcuipmentDetail extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(15.h),
@@ -116,7 +115,6 @@ class EcuipmentDetail extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10),
@@ -159,7 +157,6 @@ class EcuipmentDetail extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(12.5),
@@ -251,7 +248,6 @@ class EcuipmentDetail extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 clipBehavior: Clip.hardEdge,
                 child: Padding(

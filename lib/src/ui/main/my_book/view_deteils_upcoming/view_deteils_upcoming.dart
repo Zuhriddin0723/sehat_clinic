@@ -37,7 +37,6 @@ class ViewDetailsUpcoming extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8),
@@ -97,7 +96,6 @@ class ViewDetailsUpcoming extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                   color: Colors.white,
                 ),
                 child: Padding(

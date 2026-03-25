@@ -16,7 +16,6 @@ class ServiceDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
@@ -44,7 +43,6 @@ class ServiceDetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(blurRadius: 10, color: Colors.black12)],
                 ),
                 child: Padding(
                   padding:  EdgeInsets.all(10.w),
@@ -57,7 +55,7 @@ class ServiceDetailScreen extends StatelessWidget {
                         height: 146.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.r),
-                          color: Colors.grey[200],
+                          color: Colors.grey.shade100,
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(9.w),
@@ -77,7 +75,6 @@ class ServiceDetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(blurRadius: 12, color: Colors.black12)],
                 ),
                 child: Padding(
                   padding:  EdgeInsets.all(10.w),
@@ -131,7 +128,6 @@ class ServiceDetailScreen extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.sp),
-                  boxShadow: [BoxShadow(blurRadius: 10, color: Colors.black12)],
                   color: Colors.white,
                 ),
                 child: Padding(
@@ -226,7 +222,6 @@ class ServiceDetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(10.w),
@@ -268,7 +263,6 @@ class ServiceDetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 child: Padding(
                   padding:  EdgeInsets.all(12.5.h),
@@ -358,7 +352,6 @@ class ServiceDetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 clipBehavior: Clip.hardEdge,
                 child: Padding(

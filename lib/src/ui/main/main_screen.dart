@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/app_theme/app_icons/app_icons.dart';
+import 'package:sehat_clinic/src/ui/main/analyses/analyses_screen.dart';
 
 // Sahifalaringizni import qiling (yo'llar to'g'riligiga ishonch hosil qiling)
 import 'home/home_page.dart';
@@ -25,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
     const HomePage(),
     const ServiceScreen(),
     const MyBookingsScreen(),
-    const Center(child: Text("Analyses Screen")),
+    const AnalysesScreen(),
     const Center(child: Text("Chat Screen")),
   ];
 
@@ -44,19 +45,12 @@ class _MainScreenState extends State<MainScreen> {
         children: screens,
       ),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(bottom: 16, left: 16, right: 16),
+        padding: EdgeInsets.only(bottom: 30.h, left: 16.w, right: 16.w),
         child: Container(
           height: 70,
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.9),
+            color: Colors.white.withOpacity(0.7),
             borderRadius: BorderRadius.circular(25),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 10,
-                spreadRadius: 1,
-              ),
-            ],
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

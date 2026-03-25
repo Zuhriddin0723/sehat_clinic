@@ -19,11 +19,11 @@
   "login_title" : "Telefon raqamingizdan boshlaylik",
   "login_subtitle" : "Shaxsingizni tasdiqlash uchun sizga kod yuboramiz.",
   "phone_number" : "Telefon raqami",
-  "have_an_account" : "Akkauntingiz bormi?",
+  "have_an_account" : "Akkauntingiz bormi? ",
   "login" : "Kirish",
 
   "register" : "Ro'yxatdan o'tish",
-  "don't_have_an_account" : "Akkauntingiz yo'qmi?",
+  "don't_have_an_account" : "Akkauntingiz yo'qmi? ",
 
   "verify_title" : "Raqamingizni tasdiqlash",
   "verify_subtitle" : "\n+998 90 123 45 67 raqamiga yuborilgan 6 xonali kodni kiriting. Iltimos, uni kiriting",
@@ -143,5 +143,13 @@
   "are_you_sure" : "Navbatni bekor qilmoqchimisiz?",
   "comment" : "Izoh...",
   "no" : "Yo'q",
-  "yes" : "Ha"
+  "yes" : "Ha",
+  "analyses_history" : "Tarixni tahlil qiladi",
+  "available_analyses" : "Mavjud tahlillar",
+  "search_your_file" : "Faylingizni qidirish ...",
+  "heart_rate" : "Yurak urishi",
+  "blood_pressure" : "Qon bosimi",
+  "the_last_analyzes" : "Oxirgi tahlillar",
+  "2024_year_analyzes" : "2024 yil tahlillari",
+  "search_" : "Qidiruv"
 }

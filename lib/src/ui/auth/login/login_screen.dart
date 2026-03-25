@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -42,19 +43,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Let’s start with your phone number",
+                    "login_title".tr(),
                     style: AppStyles.semiBold20(AppColors.primaryDark),
                   ),
                   Gap(4.h),
                   Text(
-                    "We will text you a code to verify your identity.",
+                    "login_subtitle".tr(),
                     style: AppStyles.regular16(AppColors.grey),
                   ),
                   Gap(24.h),
                   RichText(
                     text: TextSpan(children: [
                       TextSpan(
-                        text: "Phone number",
+                        text: "phone_number".tr(),
                         style: AppStyles.medium14(AppColors.primaryDark),
                       ),
                       TextSpan(
@@ -104,10 +105,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 text: TextSpan(
                   style: AppStyles.regular16(AppColors.grey),
                   children: [
-                    TextSpan(text: "Don’t have an account? ",
+                    TextSpan(text: "don't_have_an_account".tr(),
                         style: AppStyles.regular16(AppColors.primaryDark)),
                     TextSpan(
-                      text: "Sign up",
+                      text: "register",
                       style: AppStyles.medium14(AppColors.primary).copyWith(
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
@@ -120,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           ButtonWidget(
             isActive: isFull,
-            text: "Continue",
+            text: "continue".tr(),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (ctx)=>VerificationScreen()));
             },

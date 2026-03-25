@@ -18,10 +18,10 @@
   "login_title" : "Let’s start with your phone number",
   "login_subtitle" : "We will text you a code to verify your identity.",
   "phone_number" : "Phone number",
-  "have_an_account" : "Already have an account?",
+  "have_an_account" : "Already have an account? ",
   "login" : "Log in",
   "register" : "Sign up",
-  "don't_have_an_account" : "Don't have an account?",
+  "don't_have_an_account" : "Don't have an account? ",
 
   "verify_title" : "Verify your number",
   "verify_subtitle" : "Enter the 6 digit code sent to \n+998 90 123 45 67. Please enter it",
@@ -134,5 +134,13 @@
   "are_you_sure" : "Are you sure you want to cancel the queue?",
   "comment" : "Comment...",
   "no" : "No",
-  "Yes" : "Yes"
+  "Yes" : "Yes",
+  "analyses_history" : "Analyses history",
+  "available_analyses" : "Available analyses",
+  "search_your_file" : "Search your file ...",
+  "heart_rate" : "Heart rate",
+  "blood_pressure" : "Blood pressure",
+  "the_last_analyzes" : "The last analyzes",
+  "2024_year_analyzes" : "2024 year analyzes",
+  "search_" : "Search"
 }

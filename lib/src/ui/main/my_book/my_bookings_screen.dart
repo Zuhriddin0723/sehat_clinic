@@ -44,21 +44,21 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
       ),
       body: Column(
         children: [
-          const SizedBox(height: 10),
-          /// 🔥 TOGGLE
+          Gap(10.h),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16),
-            padding: const EdgeInsets.all(4),
+            height: 40.h,
+            width: 355.w,
+            padding: EdgeInsets.all(4.h),
             decoration: BoxDecoration(
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(25.r),
             ),
             child: Row(
-              children: [_tabItem("Upcoming", 0), _tabItem("History", 1)],
+              children: [_tabItem("upcoming".tr(), 0), _tabItem("history".tr(), 1)],
             ),
           ),
 
-          const SizedBox(height: 10),
+          Gap(10.h),
 
           /// 🔥 PAGE VIEW
           Expanded(
@@ -90,9 +90,6 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.r),
                             color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(color: Colors.black12, blurRadius: 10),
-                            ],
                           ),
                           child: Padding(
                             padding: EdgeInsets.only(
@@ -217,9 +214,6 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15.r),
                             color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(color: Colors.black12, blurRadius: 10),
-                            ],
                           ),
                           child: Padding(
                             padding: EdgeInsets.only(left: 5, right: 5),
@@ -250,7 +244,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                         width: 62.w,
                                         height: 21.h,
                                         decoration: BoxDecoration(
-                                          color: Colors.green.shade200,
+                                          color: Colors.green.shade100,
                                           borderRadius: BorderRadius.circular(
                                             18.r,
                                           ),
@@ -272,7 +266,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                       bottomRight: Radius.circular(10.r),
                                       bottomLeft: Radius.circular(10.r),
                                     ),
-                                    color: Colors.grey[200],
+                                    color: Colors.grey.shade100,
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(10),
@@ -339,9 +333,6 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.r),
                           color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(color: Colors.black12, blurRadius: 10),
-                          ],
                         ),
                         child: Padding(
                           padding: EdgeInsets.only(left: 5.w, right: 5.w),
@@ -394,7 +385,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                     bottomRight: Radius.circular(10.r),
                                     bottomLeft: Radius.circular(10.r),
                                   ),
-                                  color: Colors.grey[200],
+                                  color: Colors.grey.shade100,
                                 ),
                                 child: Padding(
                                   padding: EdgeInsets.all(10.h),
@@ -473,7 +464,6 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
         onTap: () => onTap(index),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 250),
-          padding: EdgeInsets.symmetric(vertical: 10.w),
           decoration: BoxDecoration(
             color: isActive ? Colors.white : Colors.grey[200],
             borderRadius: BorderRadius.circular(25.r),
@@ -481,157 +471,10 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
           child: Center(
             child: Text(
               text,
-              style: TextStyle(
-                color: isActive ? Color(0xFF001E62) : Colors.black,
-                fontWeight: FontWeight.w600,
-                fontSize: 17.sp,
-              ),
+              style: AppStyles.medium16(isActive ? Color(0xFF001E62) : Colors.black)
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-/// 🔥 UPCOMING PAGE
-class UpcomingPage extends StatelessWidget {
-  const UpcomingPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: const [
-        BookingCard(
-          name: "Dr. Noah Thomson",
-          job: "Dentist",
-          date: "Feb.15",
-          time: "15:30",
-          status: "Upcoming",
-          color: Colors.blue,
-        ),
-      ],
-    );
-  }
-}
-
-/// 🔥 HISTORY PAGE
-class HistoryPage extends StatelessWidget {
-  const HistoryPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(16),
-      children: const [
-        BookingCard(
-          name: "Dr. Noah Thomson",
-          job: "Dentist",
-          date: "Feb.14",
-          time: "1.5 hours",
-          status: "Complete",
-          color: Colors.green,
-        ),
-        SizedBox(height: 10),
-        BookingCard(
-          name: "Dr. John Smith",
-          job: "Cardiology",
-          date: "Feb.13",
-          time: "1 hours",
-          status: "Canceled",
-          color: Colors.red,
-        ),
-      ],
-    );
-  }
-}
-
-/// 🔥 CARD WIDGET
-class BookingCard extends StatelessWidget {
-  final String name;
-  final String job;
-  final String date;
-  final String time;
-  final String status;
-  final Color color;
-
-  const BookingCard({
-    super.key,
-    required this.name,
-    required this.job,
-    required this.date,
-    required this.time,
-    required this.status,
-    required this.color,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5)],
-      ),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              const CircleAvatar(radius: 20),
-              const SizedBox(width: 10),
-
-              /// NAME + JOB
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      name,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(job, style: const TextStyle(color: Colors.grey)),
-                  ],
-                ),
-              ),
-
-              /// STATUS
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 5,
-                ),
-                decoration: BoxDecoration(
-                  color: color.withOpacity(0.2),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text(status, style: TextStyle(color: color)),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: 10),
-
-          /// DATE + TIME
-          Row(
-            children: [
-              const Icon(Icons.calendar_today, size: 16),
-              const SizedBox(width: 5),
-              Text(date),
-
-              const SizedBox(width: 15),
-
-              const Icon(Icons.access_time, size: 16),
-              const SizedBox(width: 5),
-              Text(time),
-
-              const Spacer(),
-
-              const Text("View details", style: TextStyle(color: Colors.blue)),
-            ],
-          ),
-        ],
       ),
     );
   }

@@ -41,7 +41,6 @@ class DoctorDetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
                   color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(10.h),
@@ -95,7 +94,6 @@ class DoctorDetailScreen extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
-                  boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
                   color: Colors.white,
                 ),
                 child: Padding(

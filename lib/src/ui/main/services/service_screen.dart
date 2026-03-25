@@ -19,9 +19,8 @@ class ServiceScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
-        title: Center(
-          child: Text("services".tr(), style: TextStyle(fontSize: 16.sp)),
-        ),
+        title: Text("services".tr(), style: TextStyle(fontSize: 16.sp)),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -91,7 +90,6 @@ class ServiceScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20.r),
-        boxShadow: [BoxShadow(blurRadius: 10, color: Colors.black12)],
       ),
       child: Padding(
         padding: EdgeInsets.all(10.h),
