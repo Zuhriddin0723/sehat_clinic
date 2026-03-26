@@ -7,7 +7,7 @@ class AppColors {
 
   /// ===== BACKGROUND =====
   static const Color backgroundDark = Color(0xff020617);
-  static const Color background = Color(0xff0F172A);
+  static const Color background = Color(0xffF5F5F5);
   static const Color surface = Color(0xff1E1E1E);
   static const Color surfaceLight = Color(0xffF8FAFC);
 

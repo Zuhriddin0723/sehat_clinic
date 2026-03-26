@@ -20,8 +20,8 @@ class FieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 44.h,
-      width: 343.w,
+      height: 48.h,
+      width: 326.w,
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
         color: Colors.white,

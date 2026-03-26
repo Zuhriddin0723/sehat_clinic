@@ -6,12 +6,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
+import 'package:sehat_clinic/src/ui/main/home/story_screen/story_screen.dart';
 
 import '../../../app_theme/app_icons/app_icons.dart';
 import '../../../app_theme/app_images/app_images.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final VoidCallback onTap;
+  const HomePage({super.key, required this.onTap});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -23,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade100,
+      backgroundColor: AppColors.background,
       appBar: myFixedAppBar(),
       body: SingleChildScrollView(
         child: Column(
@@ -37,7 +39,11 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Gap(15.w),
-                  Image.asset(AppIcons.i),
+                  InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (ctx)=>StoryScreen()));
+                      },
+                      child: Image.asset(AppIcons.i)),
                   Gap(15.w),
                   Image.asset(AppIcons.link),
                   Gap(15.w),
@@ -233,6 +239,76 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      drawer: Drawer(
+        width: 320.w,
+        backgroundColor: AppColors.white,
+        child: Column(
+          children: [
+            Gap(40.h),
+            Container(
+                height: 96.h,
+                width: 96.w,
+                child: Image.asset(AppImages.person)),
+            Gap(8.h),
+            Text("Sarah Johnson",style: AppStyles.medium16(AppColors.black),),
+            Gap(4.h),
+            Text("ID : 1233455",style: AppStyles.regular14(AppColors.grey),),
+            Gap(12.h),
+            Container(
+              width: 288.w,
+              height: 288.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                color: Colors.grey.shade100
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(13.h),
+                child: Column(
+                  children: [
+                    _drawer(AppIcons.home, "home".tr(), false),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300,),
+                    Gap(5.h),
+                    _drawer(AppIcons.user, "edit_profile".tr(), false),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300,),
+                    Gap(5.h),
+                    _drawer(AppIcons.language, "language".tr(), true),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300,),
+                    Gap(5.h),
+                    _drawer(AppIcons.support, "support".tr(), false),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300,),
+                    Gap(5.h),
+                    Row(
+                    children: [
+                      SvgPicture.asset(AppIcons.gift,color: AppColors.black,height: 25,),
+                      Gap(12.w),
+                      Text("refer_a_friend".tr(),style: AppStyles.regular16(AppColors.black),),
+                      ],
+                    ),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300,),
+                    Gap(5.h),
+                    _drawer(AppIcons.i_, "about_application".tr(), false),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  SvgPicture.asset(AppIcons.logout),
+                  Gap(10.w),
+                  Text("logout".tr(),style: AppStyles.regular16(AppColors.error),)
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 
@@ -253,9 +329,16 @@ class _HomePageState extends State<HomePage> {
               shape: BoxShape.circle,
               border: Border.all(color: Colors.white),
             ),
-            child: CircleAvatar(
-              radius: 20.r,
-              backgroundImage: AssetImage(AppImages.profile),
+            child: Builder(
+                builder: (context) {
+                  return InkWell(
+                    onTap: widget.onTap,
+                    child: CircleAvatar(
+                      radius: 20.r,
+                      backgroundImage: AssetImage(AppImages.profile),
+                    ),
+                  );
+                }
             ),
           ),
         ),
@@ -307,7 +390,7 @@ class _HomePageState extends State<HomePage> {
             ),
             child: Row(
               children: [
-                Image.asset(AppIcons.search, width: 20.w),
+                SvgPicture.asset(AppIcons.search, width: 20.w),
                 Gap(10.w),
                 Expanded(
                   child: TextField(
@@ -327,6 +410,17 @@ class _HomePageState extends State<HomePage> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(32.r)),
       ),
+    );
+  }
+  Widget _drawer (String icon, String name, bool a){
+    return Row(
+      children: [
+        SvgPicture.asset(icon,color: AppColors.black,),
+        Gap(12.w),
+        Text(name,style: AppStyles.regular16(AppColors.black),),
+        Spacer(),
+        a ? SvgPicture.asset(AppIcons.chevron_down) : Text("")
+      ],
     );
   }
 }

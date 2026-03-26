@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:sehat_clinic/src/ui/auth/verfy/verification_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../app_theme/appStyles/app_styles.dart';
 import '../../../app_theme/app_colors/app_colors.dart';
 import '../../../widget/buton_widget.dart';
@@ -98,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Gap(16.h),
           Padding(
-            padding: EdgeInsets.only(left: 28.0.w,bottom: 24.h),
+            padding: EdgeInsets.only(left: 28.w,bottom: 24.h),
             child: GestureDetector(
               onTap: widget.onTap,
               child: RichText(
@@ -108,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextSpan(text: "don't_have_an_account".tr(),
                         style: AppStyles.regular16(AppColors.primaryDark)),
                     TextSpan(
-                      text: "register",
+                      text: "register".tr(),
                       style: AppStyles.medium14(AppColors.primary).copyWith(
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
@@ -122,8 +123,11 @@ class _LoginScreenState extends State<LoginScreen> {
           ButtonWidget(
             isActive: isFull,
             text: "continue".tr(),
-            onTap: () {
+            onTap: () async{
+              final SharedPreferences prefs = await SharedPreferences.getInstance();
+              await prefs.setBool('register', false);
               Navigator.push(context, MaterialPageRoute(builder: (ctx)=>VerificationScreen()));
+              print(await prefs.getBool('register'));
             },
           ),
           Gap(34.h)

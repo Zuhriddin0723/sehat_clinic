@@ -4,6 +4,8 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
 import 'package:sehat_clinic/src/ui/auth/register/accaunt/account_screen.dart';
+import 'package:sehat_clinic/src/ui/main/main_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../app_theme/appStyles/app_styles.dart';
 import '../../../app_theme/app_colors/app_colors.dart';
@@ -42,8 +44,18 @@ class _VerificationScreenState extends State<VerificationScreen> {
       await Future.delayed(const Duration(seconds: 2));
 
       if (mounted) {
-        LoadingDialog.hide(context); // 🔹 avval yopamiz
-        Navigator.push(context, MaterialPageRoute(builder: (ctx)=>AccountScreen()));
+        LoadingDialog.hide(context);
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+        print(await prefs.getBool('register'));
+        if(await prefs.getBool('register') == false){
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => MainScreen()),
+                (Route<dynamic> route) => false,
+          );
+        }else{
+          Navigator.push(context, MaterialPageRoute(builder: (ctx)=>AccountScreen()));
+        }
       }
     } else {
       setState(() {

@@ -19,7 +19,7 @@ class ButtonWidget extends StatelessWidget {
     this.color,
     this.width,
     this.height,
-    this.isActive = true, // Default holatda faol bo'ladi
+    this.isActive = true,
   });
 
   @override
@@ -34,7 +34,7 @@ class ButtonWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: isActive
               ? (color ?? Color(0xFF001E62))
-              : (color ?? Colors.grey.shade300).withOpacity(0.3),
+              : (color ?? Colors.grey.shade400).withOpacity(0.3),
           borderRadius: BorderRadius.circular(100.r),
         ),
         alignment: Alignment.center,

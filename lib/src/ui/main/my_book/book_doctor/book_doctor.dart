@@ -6,6 +6,8 @@ import 'package:gap/gap.dart';
 import 'package:sehat_clinic/src/app_theme/app_icons/app_icons.dart';
 import 'package:sehat_clinic/src/app_theme/app_images/app_images.dart';
 
+import '../../../../app_theme/app_colors/app_colors.dart';
+
 class BookDoctor extends StatefulWidget {
   const BookDoctor({super.key});
 
@@ -62,6 +64,7 @@ class _BookDoctorState extends State<BookDoctor> {
   Widget build(BuildContext context) {
     bool isActive = selectedIndex != -1 && selectedTimeIndex != -1;
     return Scaffold(
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,

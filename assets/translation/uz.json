@@ -151,5 +151,16 @@
   "blood_pressure" : "Qon bosimi",
   "the_last_analyzes" : "Oxirgi tahlillar",
   "2024_year_analyzes" : "2024 yil tahlillari",
-  "search_" : "Qidiruv"
+  "search_" : "Qidiruv",
+  "cardiology_analyses" : "Kardiologik tahlillar",
+  "edit_profile" : "Profilni tahrirlash",
+  "language" : "Til",
+  "support" : "Qo'llab-quvvatlash",
+  "refer_a_friend" : "Do'stingizga tavsiya qilish",
+  "about_application" : "Ilova haqida",
+  "log_out" : "Chiqish",
+  "app_version" : "Ilova versiyasi",
+  "first_name" : "Ism",
+  "last_name" : "Familiya",
+  "save" : "Saqlash"
 }

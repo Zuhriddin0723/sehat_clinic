@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // O'lchamlar uchun
 import 'package:gap/gap.dart';
 
+import '../app_theme/appStyles/app_styles.dart';
+import '../app_theme/app_colors/app_colors.dart';
+
 class FieldWidgetWithNumber extends StatefulWidget {
   final TextEditingController controller;
   final String labelText;
@@ -20,31 +23,18 @@ class FieldWidgetWithNumber extends StatefulWidget {
 class _FieldWidgetWithNumberState extends State<FieldWidgetWithNumber> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // 1. Teppa qismidagi "Phone number *" yozuvi
-        RichText(
-          text: TextSpan(
-            text: widget.labelText,
-            style: TextStyle(
-              color: const Color(0xFF001E62), // To'q ko'k rang
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w500,
-            ),
-            children: const [
-              TextSpan(
-                text: ' *',
-                style: TextStyle(color: Colors.red), // Qizil yulduzcha
-              ),
-            ],
-          ),
-        ),
-
-        Gap(8.h), // Yozuv va TextField orasidagi masofa
-
-        // 2. TextField qismi
-        TextField(
+    return Container(
+      height: 48.h,
+      width: 326.w,
+      alignment: Alignment.centerLeft,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30.r),
+        border: Border.all(color: Colors.grey.shade200),
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(left: 18.w),
+        child: TextField(
           controller: widget.controller,
           keyboardType: TextInputType.phone,
           onTap: () {
@@ -58,33 +48,19 @@ class _FieldWidgetWithNumberState extends State<FieldWidgetWithNumber> {
             LengthLimitingTextInputFormatter(17),
             PhoneNumberFormatter(),
           ],
-          style: TextStyle(
-            fontSize: 16.sp,
-            color: Colors.black,
-            letterSpacing: 1.1, // Raqamlar orasi biroz ochiq bo'lishi uchun
-          ),
+          textAlign: TextAlign.start,
+          textAlignVertical: TextAlignVertical.center,
+          style: TextStyle(fontSize: 14.sp),
           decoration: InputDecoration(
-            filled: true,
-            fillColor: Colors.white,
-            contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
-
-            // Doimiy (oddiy) holatdagi border
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30.r), // Juda yumaloq burchaklar
-              borderSide: BorderSide(color: Colors.blue.shade100, width: 1),
-            ),
-
-            // Bosilgandagi (Fokus) holatdagi border
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30.r),
-              borderSide: const BorderSide(color: Color(0xFF001E62), width: 1.5),
-            ),
-
-            hintText: "+998 90 123 45 67",
-            hintStyle: TextStyle(color: Colors.grey.shade400),
+            isCollapsed: true,
+            hintText: "+998 _ _  _ _ _  _ _  _ _",
+            hintStyle: AppStyles.regular14(AppColors.grey),
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
           ),
         ),
-      ],
+      ),
     );
   }
 }

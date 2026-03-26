@@ -7,6 +7,7 @@ import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/app_theme/app_icons/app_icons.dart';
 import 'package:sehat_clinic/src/app_theme/app_images/app_images.dart';
+import 'package:sehat_clinic/src/ui/main/analyses/analyses%20history/analyses_history_screen.dart';
 import 'package:sehat_clinic/src/widget/field_widget.dart';
 
 import '../services/service_deteil/service_deteil_screen.dart';
@@ -44,6 +45,7 @@ class _AnalysesScreenState extends State<AnalysesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
@@ -191,7 +193,7 @@ class _AnalysesScreenState extends State<AnalysesScreen> {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (ctx) => ServiceDetailScreen(),
+                                          builder: (ctx) => AnalysesHistoryScreen(),
                                         ),
                                       );
                                     },
@@ -308,10 +310,12 @@ class _AnalysesScreenState extends State<AnalysesScreen> {
             ),
             child: SvgPicture.asset(AppIcons.download),
           ),
+          Gap(10.w)
         ],
       ),
     );
   }
+
   Widget _createServices(String text, String img,int height,int width) {
     return Container(
       width: 160.w,

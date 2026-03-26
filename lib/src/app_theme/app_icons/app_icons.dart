@@ -49,4 +49,9 @@ class AppIcons{
   static const stars = "assets/icons/stars.svg";
   static const error = "assets/icons/error.svg";
   static const download = "assets/icons/download.svg";
+  static const language = "assets/icons/language.svg";
+  static const support = "assets/icons/support.svg";
+  static const i_ = "assets/icons/i.svg";
+  static const logout = "assets/icons/logout.svg";
+  static const camera = "assets/icons/camera.svg";
 }

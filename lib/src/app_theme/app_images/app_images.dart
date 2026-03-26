@@ -20,5 +20,10 @@ class AppImages{
   static const map = "assets/images/map.png";
   static const dentist2 = "assets/images/dentist2.png";
   static const xray = "assets/images/x-ray.png";
+  static const xRay = "assets/images/xray.png";
+  static const mrt = "assets/images/mrt.png";
+  static const icon = "assets/images/icon.jpg";
+  static const mskt = "assets/images/mskt.png";
+  static const person = "assets/images/person.png";
 
 }

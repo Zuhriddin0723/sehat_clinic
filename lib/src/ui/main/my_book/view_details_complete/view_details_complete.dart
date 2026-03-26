@@ -21,6 +21,7 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.background,
       appBar: AppBar(
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.transparent,

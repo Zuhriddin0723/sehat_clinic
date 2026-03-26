@@ -143,5 +143,16 @@
   "blood_pressure" : "Артериальное давление",
   "the_last_analyzes" : "Последние анализы",
   "2024_year_analyzes" : "Анализы за 2024 год",
-  "search_" : "Поиск"
+  "search_" : "Поиск",
+  "cardiology_analyses" : "Кардиологические анализы",
+  "edit_profile" : "Редактировать профиль",
+  "language" : "Язык",
+  "support" : "Поддержка",
+  "refer_a_friend" : "Пригласить друга",
+  "about_application" : "О приложении",
+  "log_out" : "Выход из системы",
+  "app_version" : "Версия приложения",
+  "first_name" : "Имя",
+  "last_name" : "Фамилия",
+  "save" : "Сохранять"
 }

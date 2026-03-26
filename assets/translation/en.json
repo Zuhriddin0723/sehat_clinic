@@ -142,5 +142,16 @@
   "blood_pressure" : "Blood pressure",
   "the_last_analyzes" : "The last analyzes",
   "2024_year_analyzes" : "2024 year analyzes",
-  "search_" : "Search"
+  "search_" : "Search",
+  "cardiology_analyses" : "Cardiology analyses",
+  "edit_profile" : "Edit profile",
+  "language" : "Language",
+  "support" : "Support",
+  "refer_a_friend" : "Refer a friend",
+  "about_application" : "About application",
+  "log_out" : "Log out",
+  "app_version" : "App version",
+  "first_name" : "First name",
+  "last_name" : "Last name",
+  "save" : "Save"
 }

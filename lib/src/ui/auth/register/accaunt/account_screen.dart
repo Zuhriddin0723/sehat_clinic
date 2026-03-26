@@ -138,7 +138,11 @@ class _AccountScreenState extends State<AccountScreen> {
             text: "Continue",
             isActive: nameController.text.isNotEmpty && selectedGender != null && dobController.text.isNotEmpty,
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (ctx)=>MainScreen()));
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => MainScreen()),
+                    (Route<dynamic> route) => false,
+              );
             },
           ),
           Gap(34.h)

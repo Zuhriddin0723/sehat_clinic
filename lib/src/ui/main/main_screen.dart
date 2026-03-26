@@ -2,11 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/app_theme/app_icons/app_icons.dart';
 import 'package:sehat_clinic/src/ui/main/analyses/analyses_screen.dart';
-
-// Sahifalaringizni import qiling (yo'llar to'g'riligiga ishonch hosil qiling)
+import 'package:sehat_clinic/src/ui/main/edit_profile/edit_profile.dart';
+import '../../app_theme/appStyles/app_styles.dart';
+import '../../app_theme/app_images/app_images.dart';
 import 'home/home_page.dart';
 import 'my_book/my_bookings_screen.dart';
 import 'services/service_screen.dart';
@@ -20,10 +22,14 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int currentIndex = 0;
-
-  // Ekranlar ro'yxati
   final List<Widget> screens = [
-    const HomePage(),
+    Builder(
+      builder: (context) => HomePage(
+        onTap: () {
+          Scaffold.of(context).openDrawer();
+        },
+      ),
+    ),
     const ServiceScreen(),
     const MyBookingsScreen(),
     const AnalysesScreen(),
@@ -40,10 +46,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: IndexedStack(
-        index: currentIndex,
-        children: screens,
-      ),
+      body: IndexedStack(index: currentIndex, children: screens),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(bottom: 30.h, left: 16.w, right: 16.w),
         child: Container(
@@ -62,6 +65,114 @@ class _MainScreenState extends State<MainScreen> {
               _item(4, "chat".tr()),
             ],
           ),
+        ),
+      ),
+      drawer: Drawer(
+        width: 320.w,
+        backgroundColor: AppColors.white,
+        child: Column(
+          children: [
+            Gap(40.h),
+            Container(
+              height: 96.h,
+              width: 96.w,
+              child: Image.asset(AppImages.person),
+            ),
+            Gap(8.h),
+            Text("Sarah Johnson", style: AppStyles.medium16(AppColors.black)),
+            Gap(4.h),
+            Text("ID : 1233455", style: AppStyles.regular14(AppColors.grey)),
+            Gap(12.h),
+            Container(
+              width: 288.w,
+              height: 288.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                color: Colors.grey.shade100,
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(13.h),
+                child: Column(
+                  children: [
+                    _drawer(AppIcons.home, "home".tr(), false, () {
+                      Navigator.pop(context);
+                    }),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300),
+                    Gap(5.h),
+                    _drawer(AppIcons.user, "edit_profile".tr(), false, () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (ctx) => EditProfile()),
+                      );
+                      Navigator.pop(context);
+                    }),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300),
+                    Gap(5.h),
+                    _drawer(AppIcons.language, "language".tr(), true, () {}),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300),
+                    Gap(5.h),
+                    _drawer(AppIcons.support, "support".tr(), false, () {}),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300),
+                    Gap(5.h),
+                    Row(
+                      children: [
+                        SvgPicture.asset(
+                          AppIcons.gift,
+                          color: AppColors.black,
+                          height: 25,
+                        ),
+                        Gap(12.w),
+                        Text(
+                          "refer_a_friend".tr(),
+                          style: AppStyles.regular16(AppColors.black),
+                        ),
+                      ],
+                    ),
+                    Gap(5.h),
+                    Divider(color: Colors.grey.shade300),
+                    Gap(5.h),
+                    _drawer(
+                      AppIcons.i_,
+                      "about_application".tr(),
+                      false,
+                      () {},
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  SvgPicture.asset(AppIcons.logout),
+                  Gap(10.w),
+                  Text(
+                    "log_out".tr(),
+                    style: AppStyles.regular16(AppColors.error),
+                  ),
+                ],
+              ),
+            ),
+            Spacer(),
+            Padding(
+              padding: EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Text(
+                    "app_version".tr(),
+                    style: AppStyles.regular14(AppColors.black),
+                  ),
+                  Spacer(),
+                  Text("1.0.0", style: AppStyles.regular14(AppColors.black)),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -96,22 +207,33 @@ class _MainScreenState extends State<MainScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              getIconPath(),
-              height: 24,
-              width: 24,
-            ),
+            SvgPicture.asset(getIconPath(), height: 24, width: 24),
             const SizedBox(height: 4),
             Text(
               name,
               style: TextStyle(
                 fontSize: 10.sp,
                 fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-                color: isActive ? AppColors.primary: Colors.grey,
+                color: isActive ? AppColors.primary : Colors.grey,
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _drawer(String icon, String name, bool a, VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      child: Row(
+        children: [
+          SvgPicture.asset(icon, color: AppColors.black),
+          Gap(12.w),
+          Text(name, style: AppStyles.regular16(AppColors.black)),
+          Spacer(),
+          a ? SvgPicture.asset(AppIcons.chevron_down) : Text(""),
+        ],
       ),
     );
   }
