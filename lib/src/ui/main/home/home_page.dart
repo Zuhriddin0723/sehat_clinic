@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
+import 'package:sehat_clinic/src/ui/main/home/events_screen/events_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/story_screen/story_screen.dart';
 
 import '../../../app_theme/app_icons/app_icons.dart';
@@ -13,6 +14,7 @@ import '../../../app_theme/app_images/app_images.dart';
 
 class HomePage extends StatefulWidget {
   final VoidCallback onTap;
+
   const HomePage({super.key, required this.onTap});
 
   @override
@@ -32,6 +34,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Gap(10.h),
+
             /// ICONLAR ROW
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -40,10 +43,14 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Gap(15.w),
                   InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (ctx)=>StoryScreen()));
-                      },
-                      child: Image.asset(AppIcons.i)),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (ctx) => StoryScreen()),
+                      );
+                    },
+                    child: Image.asset(AppIcons.i),
+                  ),
                   Gap(15.w),
                   Image.asset(AppIcons.link),
                   Gap(15.w),
@@ -55,11 +62,11 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
+
             /// doctor card
             Padding(
               padding: EdgeInsets.all(20.h),
-              child:
-              Container(
+              child: Container(
                 width: 343.w,
                 height: 162.h,
                 decoration: BoxDecoration(
@@ -86,16 +93,19 @@ class _HomePageState extends State<HomePage> {
                                 Image.asset(AppImages.dentist),
                                 Gap(10.w),
                                 Column(
-                                  crossAxisAlignment:
-                                  CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       "Dr. Noah Thomson",
-                                      style: AppStyles.medium16(AppColors.black),
+                                      style: AppStyles.medium16(
+                                        AppColors.black,
+                                      ),
                                     ),
                                     Text(
-                                        "dentist".tr(),
-                                        style: AppStyles.regular12(AppColors.grey)
+                                      "dentist".tr(),
+                                      style: AppStyles.regular12(
+                                        AppColors.grey,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -117,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.all(10.h),
                           child: Row(
                             children: [
-                              Image.asset(AppIcons.calendar),
+                              SvgPicture.asset(AppIcons.calendar),
                               Gap(5.w),
                               Text(
                                 "Feb.14",
@@ -135,14 +145,11 @@ class _HomePageState extends State<HomePage> {
                                 width: 102.w,
                                 height: 28.h,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(
-                                    10.r,
-                                  ),
+                                  borderRadius: BorderRadius.circular(10.r),
                                   color: Colors.white,
                                 ),
                                 child: Row(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Image.asset(
                                       AppIcons.file,
@@ -151,7 +158,9 @@ class _HomePageState extends State<HomePage> {
                                     Gap(3.w),
                                     Text(
                                       "view".tr(),
-                                      style: AppStyles.medium12(AppColors.black),
+                                      style: AppStyles.medium12(
+                                        AppColors.black,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -166,14 +175,28 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 20.w,right: 20.w),
+              padding: EdgeInsets.only(left: 20.w, right: 20.w),
               child: Row(
                 children: [
-                  Text("events".tr(),  style: AppStyles.semiBold14(AppColors.black)),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (ctx) => EventsScreen()),
+                      );
+                    },
+                    child: Text(
+                      "events".tr(),
+                      style: AppStyles.semiBold14(AppColors.black),
+                    ),
+                  ),
                   const Spacer(),
                   TextButton(
                     onPressed: () {},
-                    child: Text("all".tr(),  style: AppStyles.regular14(AppColors.primaryBright)),
+                    child: Text(
+                      "all".tr(),
+                      style: AppStyles.regular14(AppColors.primaryBright),
+                    ),
                   ),
                 ],
               ),
@@ -194,22 +217,25 @@ class _HomePageState extends State<HomePage> {
                           width: 200.w,
                           height: 133.h,
                           clipBehavior: Clip.hardEdge,
-                          decoration:  BoxDecoration(
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
                               topRight: Radius.circular(10.r),
                               topLeft: Radius.circular(10.r),
                             ),
                           ),
-                          child: Image.asset(AppImages.image, fit: BoxFit.cover),
+                          child: Image.asset(
+                            AppImages.image,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         Container(
                           width: 200.w,
-                          decoration:  BoxDecoration(
+                          decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(10.r),
-                              bottomLeft: Radius.circular(10.r)
-                            )
+                              bottomLeft: Radius.circular(10.r),
+                            ),
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(10.w),
@@ -218,13 +244,24 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Row(
                                   children: [
-                                    Image.asset(AppIcons.calendar),
+                                    SvgPicture.asset(AppIcons.calendar),
                                     Gap(5.w),
-                                    Text("${"feb".tr()} 15, 2024", style: AppStyles.medium12(AppColors.black)),
+                                    Text(
+                                      "${"feb".tr()} 15, 2024",
+                                      style: AppStyles.medium12(
+                                        AppColors.black,
+                                      ),
+                                    ),
                                   ],
                                 ),
-                                Text("heart_health_matters".tr(), style: AppStyles.medium16(AppColors.black)),
-                                Text("cardiovascular_subtitle".tr(), style: AppStyles.regular14(AppColors.grey)),
+                                Text(
+                                  "heart_health_matters".tr(),
+                                  style: AppStyles.medium16(AppColors.black),
+                                ),
+                                Text(
+                                  "cardiovascular_subtitle".tr(),
+                                  style: AppStyles.regular14(AppColors.grey),
+                                ),
                               ],
                             ),
                           ),
@@ -235,7 +272,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
-            Gap(50.h)
+            Gap(50.h),
           ],
         ),
       ),
@@ -246,20 +283,21 @@ class _HomePageState extends State<HomePage> {
           children: [
             Gap(40.h),
             Container(
-                height: 96.h,
-                width: 96.w,
-                child: Image.asset(AppImages.person)),
+              height: 96.h,
+              width: 96.w,
+              child: Image.asset(AppImages.person),
+            ),
             Gap(8.h),
-            Text("Sarah Johnson",style: AppStyles.medium16(AppColors.black),),
+            Text("Sarah Johnson", style: AppStyles.medium16(AppColors.black)),
             Gap(4.h),
-            Text("ID : 1233455",style: AppStyles.regular14(AppColors.grey),),
+            Text("ID : 1233455", style: AppStyles.regular14(AppColors.grey)),
             Gap(12.h),
             Container(
               width: 288.w,
               height: 288.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.r),
-                color: Colors.grey.shade100
+                color: Colors.grey.shade100,
               ),
               child: Padding(
                 padding: EdgeInsets.all(13.h),
@@ -267,29 +305,36 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     _drawer(AppIcons.home, "home".tr(), false),
                     Gap(5.h),
-                    Divider(color: Colors.grey.shade300,),
+                    Divider(color: Colors.grey.shade300),
                     Gap(5.h),
                     _drawer(AppIcons.user, "edit_profile".tr(), false),
                     Gap(5.h),
-                    Divider(color: Colors.grey.shade300,),
+                    Divider(color: Colors.grey.shade300),
                     Gap(5.h),
                     _drawer(AppIcons.language, "language".tr(), true),
                     Gap(5.h),
-                    Divider(color: Colors.grey.shade300,),
+                    Divider(color: Colors.grey.shade300),
                     Gap(5.h),
                     _drawer(AppIcons.support, "support".tr(), false),
                     Gap(5.h),
-                    Divider(color: Colors.grey.shade300,),
+                    Divider(color: Colors.grey.shade300),
                     Gap(5.h),
                     Row(
-                    children: [
-                      SvgPicture.asset(AppIcons.gift,color: AppColors.black,height: 25,),
-                      Gap(12.w),
-                      Text("refer_a_friend".tr(),style: AppStyles.regular16(AppColors.black),),
+                      children: [
+                        SvgPicture.asset(
+                          AppIcons.gift,
+                          color: AppColors.black,
+                          height: 25,
+                        ),
+                        Gap(12.w),
+                        Text(
+                          "refer_a_friend".tr(),
+                          style: AppStyles.regular16(AppColors.black),
+                        ),
                       ],
                     ),
                     Gap(5.h),
-                    Divider(color: Colors.grey.shade300,),
+                    Divider(color: Colors.grey.shade300),
                     Gap(5.h),
                     _drawer(AppIcons.i_, "about_application".tr(), false),
                   ],
@@ -302,10 +347,13 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SvgPicture.asset(AppIcons.logout),
                   Gap(10.w),
-                  Text("logout".tr(),style: AppStyles.regular16(AppColors.error),)
+                  Text(
+                    "logout".tr(),
+                    style: AppStyles.regular16(AppColors.error),
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -330,44 +378,114 @@ class _HomePageState extends State<HomePage> {
               border: Border.all(color: Colors.white),
             ),
             child: Builder(
-                builder: (context) {
-                  return InkWell(
-                    onTap: widget.onTap,
-                    child: CircleAvatar(
-                      radius: 20.r,
-                      backgroundImage: AssetImage(AppImages.profile),
-                    ),
-                  );
-                }
+              builder: (context) {
+                return InkWell(
+                  onTap: widget.onTap,
+                  child: CircleAvatar(
+                    radius: 20.r,
+                    backgroundImage: AssetImage(AppImages.profile),
+                  ),
+                );
+              },
             ),
           ),
         ),
       ),
-      title: Container(
-        width: 88.w,
-        height: 36.h,
-        padding: EdgeInsets.all(7.h),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28),
-          color: AppColors.white.withOpacity(0.1),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              height: 26.h,
+      title: InkWell(
+        onTap: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return StatefulBuilder(
+                builder: (context, setStateModal) {
+                  return DraggableScrollableSheet(
+                    initialChildSize: 0.5,
+                    minChildSize: 0.4,
+                    maxChildSize: 0.9,
+                    expand: false,
+                    builder: (context, scrollController) {
+                      return Container(
+                        child: Padding(
+                          padding: EdgeInsets.only(
+                            top: 32.h,
+                            left: 22.w,
+                            right: 22.w,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text.rich(
+                                TextSpan(
+                                  text: "what_are".tr(),
+                                  style: AppStyles.bold24(AppColors.black),
+                                  children: [
+                                    TextSpan(
+                                      text: "loyalty_balance".tr(),
+                                      style: AppStyles.bold24(AppColors.error),
+                                    ),
+                                    TextSpan(
+                                      text: "points?".tr(),
+                                      style: AppStyles.bold24(AppColors.black),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Gap(10.h),
+                              Text(
+                                "loyalty_balance_points".tr(),
+                                style: AppStyles.regular16(AppColors.grey),
+                              ),
+                              Container(
+                                width: 156.w,
+                                height: 38.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  color: AppColors.white.withOpacity(0.5),
+                                ),
+                                child: Text(
+                                  "1${"friend".tr()} = 1,000 UZS",
+                                  style: AppStyles.regular14(AppColors.black),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              );
+            },
+          );
+        },
+        child: Container(
+          width: 88.w,
+          height: 36.h,
+          padding: EdgeInsets.all(7.h),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(28),
+            color: AppColors.white.withOpacity(0.1),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                height: 26.h,
                 width: 26.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20.r),
-                  color: AppColors.error
+                  color: AppColors.error,
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(3.h),
-                  child: SvgPicture.asset(AppIcons.gift,),
-                )),
-            Gap(4.w),
-           Text("20.000", style: AppStyles.regular14(AppColors.white)),
-          ],
+                  child: SvgPicture.asset(AppIcons.gift),
+                ),
+              ),
+              Gap(4.w),
+              Text("20.000", style: AppStyles.regular14(AppColors.white)),
+            ],
+          ),
         ),
       ),
       centerTitle: true,
@@ -412,14 +530,15 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-  Widget _drawer (String icon, String name, bool a){
+
+  Widget _drawer(String icon, String name, bool a) {
     return Row(
       children: [
-        SvgPicture.asset(icon,color: AppColors.black,),
+        SvgPicture.asset(icon, color: AppColors.black),
         Gap(12.w),
-        Text(name,style: AppStyles.regular16(AppColors.black),),
+        Text(name, style: AppStyles.regular16(AppColors.black)),
         Spacer(),
-        a ? SvgPicture.asset(AppIcons.chevron_down) : Text("")
+        a ? SvgPicture.asset(AppIcons.chevron_down) : Text(""),
       ],
     );
   }

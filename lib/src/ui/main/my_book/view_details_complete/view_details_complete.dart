@@ -240,9 +240,9 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                   return StatefulBuilder(
                     builder: (context, setStateModal) {
                       return DraggableScrollableSheet(
-                        initialChildSize: 0.5, // boshlanish
+                        initialChildSize: 0.5,
                         minChildSize: 0.4,
-                        maxChildSize: 0.9, // maksimal
+                        maxChildSize: 0.9,
                         expand: false,
                         builder: (context, scrollController) {
                           return Container(

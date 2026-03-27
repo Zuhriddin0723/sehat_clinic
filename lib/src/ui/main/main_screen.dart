@@ -105,7 +105,6 @@ class _MainScreenState extends State<MainScreen> {
                         context,
                         MaterialPageRoute(builder: (ctx) => EditProfile()),
                       );
-                      Navigator.pop(context);
                     }),
                     Gap(5.h),
                     Divider(color: Colors.grey.shade300),

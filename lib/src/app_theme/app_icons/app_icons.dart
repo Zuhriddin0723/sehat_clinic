@@ -2,7 +2,7 @@
 
 class AppIcons{
   static const big_notification = "assets/icons/big_notification.png";
-  static const calendar = "assets/icons/calendar.png";
+  static const calendar = "assets/icons/calendar.svg";
   static const clock = "assets/icons/clock.png";
   static const file = "assets/icons/file.png";
   static const gift = "assets/icons/gift.svg";

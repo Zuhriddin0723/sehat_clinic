@@ -138,7 +138,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                     padding: EdgeInsets.all(8.h),
                                     child: Row(
                                       children: [
-                                        Image.asset(AppIcons.calendar),
+                                        SvgPicture.asset(AppIcons.calendar),
                                         Gap(5.w),
                                         Text(
                                           "Feb.15",
@@ -273,7 +273,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                     padding: const EdgeInsets.all(10),
                                     child: Row(
                                       children: [
-                                        Image.asset(AppIcons.calendar),
+                                        SvgPicture.asset(AppIcons.calendar),
                                         Gap(5.w),
                                         Text(
                                           "Feb.14",
@@ -392,7 +392,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                   padding: EdgeInsets.all(10.h),
                                   child: Row(
                                     children: [
-                                      Image.asset(AppIcons.calendar),
+                                      SvgPicture.asset(AppIcons.calendar),
                                       Gap(5.w),
                                       Text(
                                         "Feb.14",
