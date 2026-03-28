@@ -8,6 +8,7 @@ import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/ui/main/home/events_screen/events_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/story_screen/story_screen.dart';
+import 'package:sehat_clinic/src/widget/buton_widget.dart';
 
 import '../../../app_theme/app_icons/app_icons.dart';
 import '../../../app_theme/app_images/app_images.dart';
@@ -395,27 +396,33 @@ class _HomePageState extends State<HomePage> {
         onTap: () {
           showModalBottomSheet(
             context: context,
+            isScrollControlled: true, // Juda muhim: modal balandligini boshqarish uchun
+            backgroundColor: Colors.transparent,
             builder: (context) {
               return StatefulBuilder(
                 builder: (context, setStateModal) {
                   return DraggableScrollableSheet(
                     initialChildSize: 0.5,
-                    minChildSize: 0.4,
                     maxChildSize: 0.9,
                     expand: false,
                     builder: (context, scrollController) {
                       return Container(
-                        child: Padding(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
+                        ),
+                        child: ListView( // Column o'rniga ListView
+                          controller: scrollController, // Draggable ishlashi uchun shart
                           padding: EdgeInsets.only(
                             top: 32.h,
                             left: 22.w,
                             right: 22.w,
+                            bottom: 20.h, // Pastki qismda biroz joy qoldirish uchun
                           ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text.rich(
+                          children: [
+                            Center( // Column'dagi crossAxisAlignment.center o'rniga
+                              child: Text.rich(
+                                textAlign: TextAlign.center,
                                 TextSpan(
                                   text: "what_are".tr(),
                                   style: AppStyles.bold24(AppColors.black),
@@ -431,25 +438,95 @@ class _HomePageState extends State<HomePage> {
                                   ],
                                 ),
                               ),
-                              Gap(10.h),
-                              Text(
-                                "loyalty_balance_points".tr(),
-                                style: AppStyles.regular16(AppColors.grey),
-                              ),
-                              Container(
+                            ),
+                            Gap(10.h),
+                            Text(
+                              "loyalty_balance_points".tr(),
+                              style: AppStyles.regular16(AppColors.grey),
+                              textAlign: TextAlign.center,
+                            ),
+                            Gap(20.h), // Masofa uchun
+                            Center(
+                              child: Container(
                                 width: 156.w,
                                 height: 38.h,
+                                alignment: Alignment.center, // Matn o'rtada bo'lishi uchun
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.r),
                                   color: AppColors.white.withOpacity(0.5),
+                                  border: Border.all(color: AppColors.grey.withOpacity(0.2)), // Ko'rinishi uchun
                                 ),
                                 child: Text(
                                   "1${"friend".tr()} = 1,000 UZS",
                                   style: AppStyles.regular14(AppColors.black),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                            Gap(20.h),
+                            Container(
+                              width: 343.w,
+                              height: 50.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30.r),
+                                color: Colors.grey.shade200,
+                              ),
+                              child: Center(
+                                child: Text("view_points_history",style: AppStyles.medium14(AppColors.black),),
+                              ),
+                            ),
+                            Gap(24.h),
+                            Container(
+                              width: 343.w,
+                              height: 153.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16.r),
+                                color: Color(0xFFEE3D69)
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(15),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("balance".tr(),style: AppStyles.regular14(AppColors.white),),
+                                    Row(
+                                      children: [
+                                        Text("150,000",style: AppStyles.bold36(AppColors.white),),
+                                        Padding(
+                                          padding: EdgeInsets.only(top: 10.h,left: 5.w),
+                                          child: Text("UZS",style: AppStyles.regular18(AppColors.white),),
+                                        ),
+                                        Spacer(),
+                                        Padding(
+                                          padding: EdgeInsets.only(bottom: 25.h,right: 10.w),
+                                          child: Icon(Icons.favorite,color: Colors.white.withOpacity(0.5),size: 30.sp,),
+                                        )
+                                      ],
+                                    ),
+                                    Gap(10.h),
+                                    Container(
+                                      width: 311.w,
+                                      height: 40.h,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(25.r),
+                                        color: Colors.white.withOpacity(0.5)
+                                      ),
+                                      child: Center(child: Text("pay".tr(),style: AppStyles.medium16(AppColors.white),)),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Gap(18.h),
+                            Text("how_to_earn".tr(),style: AppStyles.medium20(AppColors.black),),
+                            Container(
+                              width: 343.w,
+                              height: 100.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15.r),
+                                color: Colors.grey.shade200
+                              ),
+                            )
+                          ],
                         ),
                       );
                     },
