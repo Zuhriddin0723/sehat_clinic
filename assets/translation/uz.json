@@ -186,5 +186,10 @@
   "how_to_earn" : "Qanday qilib pul topish mumkin",
   "visit_the_clinic" : "Klinikaga tashrif buyuring",
   "get_up" : "Har bir konsultatsiya yoki protsedura uchun 5% gacha ball qaytarib oling.",
-  "earn_50" : "Bizga yo'llagan har bir yangi bemor uchun 50 ball to'plang."
+  "earn_50" : "Bizga yo'llagan har bir yangi bemor uchun 50 ball to'plang.",
+  "points_history" : "Ballar tarixi",
+  "for_inviting" : "Taklif qilish uchun",
+  "pay_with" : "Bilan to'lang ",
+  "loyalty" : "Sadoqat balansi",
+  "scan": "Sodiqlik balansingizdan foydalanib to'lash uchun ushbu kodni klinikaning QR skaneri bilan skanerlang"
 }

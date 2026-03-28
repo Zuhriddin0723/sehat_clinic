@@ -7,6 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/ui/main/home/events_screen/events_screen.dart';
+import 'package:sehat_clinic/src/ui/main/home/points_history/points_history_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/story_screen/story_screen.dart';
 import 'package:sehat_clinic/src/widget/buton_widget.dart';
 
@@ -396,31 +397,36 @@ class _HomePageState extends State<HomePage> {
         onTap: () {
           showModalBottomSheet(
             context: context,
-            isScrollControlled: true, // Juda muhim: modal balandligini boshqarish uchun
+            isScrollControlled: true, // Balandlikni boshqarish uchun shart
             backgroundColor: Colors.transparent,
             builder: (context) {
               return StatefulBuilder(
                 builder: (context, setStateModal) {
                   return DraggableScrollableSheet(
-                    initialChildSize: 0.5,
+                    // --- O'ZGARTIRILGAN JOYI ---
+                    initialChildSize: 0.9,
+                    minChildSize: 0.5,
                     maxChildSize: 0.9,
                     expand: false,
+                    // ---------------------------
                     builder: (context, scrollController) {
                       return Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(20.r),
+                          ),
                         ),
-                        child: ListView( // Column o'rniga ListView
-                          controller: scrollController, // Draggable ishlashi uchun shart
+                        child: ListView(
+                          controller: scrollController,
                           padding: EdgeInsets.only(
                             top: 32.h,
                             left: 22.w,
                             right: 22.w,
-                            bottom: 20.h, // Pastki qismda biroz joy qoldirish uchun
+                            bottom: 30.h,
                           ),
                           children: [
-                            Center( // Column'dagi crossAxisAlignment.center o'rniga
+                            Center(
                               child: Text.rich(
                                 textAlign: TextAlign.center,
                                 TextSpan(
@@ -445,16 +451,18 @@ class _HomePageState extends State<HomePage> {
                               style: AppStyles.regular16(AppColors.grey),
                               textAlign: TextAlign.center,
                             ),
-                            Gap(20.h), // Masofa uchun
+                            Gap(20.h),
                             Center(
                               child: Container(
                                 width: 156.w,
                                 height: 38.h,
-                                alignment: Alignment.center, // Matn o'rtada bo'lishi uchun
+                                alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10.r),
                                   color: AppColors.white.withOpacity(0.5),
-                                  border: Border.all(color: AppColors.grey.withOpacity(0.2)), // Ko'rinishi uchun
+                                  border: Border.all(
+                                    color: AppColors.grey.withOpacity(0.2),
+                                  ),
                                 ),
                                 child: Text(
                                   "1${"friend".tr()} = 1,000 UZS",
@@ -463,69 +471,335 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Gap(20.h),
-                            Container(
-                              width: 343.w,
-                              height: 50.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30.r),
-                                color: Colors.grey.shade200,
-                              ),
-                              child: Center(
-                                child: Text("view_points_history",style: AppStyles.medium14(AppColors.black),),
+                            // "View points history" tugmasi
+                            InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (ctx) => PointsHistoryScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 343.w,
+                                height: 50.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30.r),
+                                  color: Colors.grey.shade200,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "view_points_history".tr(),
+                                    style: AppStyles.medium14(AppColors.black),
+                                  ),
+                                ),
                               ),
                             ),
                             Gap(24.h),
+                            // Balans kartasi
                             Container(
                               width: 343.w,
                               height: 153.h,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(16.r),
-                                color: Color(0xFFEE3D69)
+                                color: const Color(0xFFEE3D69),
                               ),
                               child: Padding(
-                                padding: EdgeInsets.all(15),
+                                padding: EdgeInsets.all(14.h),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    Text("balance".tr(),style: AppStyles.regular14(AppColors.white),),
+                                    Text(
+                                      "balance".tr(),
+                                      style: AppStyles.regular14(
+                                        AppColors.white,
+                                      ),
+                                    ),
                                     Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
-                                        Text("150,000",style: AppStyles.bold36(AppColors.white),),
+                                        Text(
+                                          "150,000",
+                                          style: AppStyles.bold36(
+                                            AppColors.white,
+                                          ),
+                                        ),
                                         Padding(
-                                          padding: EdgeInsets.only(top: 10.h,left: 5.w),
-                                          child: Text("UZS",style: AppStyles.regular18(AppColors.white),),
+                                          padding: EdgeInsets.only(
+                                            bottom: 8.h,
+                                            left: 5.w,
+                                          ),
+                                          child: Text(
+                                            "UZS",
+                                            style: AppStyles.regular18(
+                                              AppColors.white,
+                                            ),
+                                          ),
                                         ),
                                         Spacer(),
                                         Padding(
-                                          padding: EdgeInsets.only(bottom: 25.h,right: 10.w),
-                                          child: Icon(Icons.favorite,color: Colors.white.withOpacity(0.5),size: 30.sp,),
-                                        )
+                                          padding: EdgeInsets.only(bottom: 5.h),
+                                          child: Icon(
+                                            Icons.favorite,
+                                            color: Colors.white.withOpacity(
+                                              0.5,
+                                            ),
+                                            size: 30.sp,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                     Gap(10.h),
-                                    Container(
-                                      width: 311.w,
-                                      height: 40.h,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(25.r),
-                                        color: Colors.white.withOpacity(0.5)
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                        showModalBottomSheet(
+                                          context: context,
+                                          builder: (context) {
+                                            return Container(
+                                              height: 595.h,
+                                              width: MediaQuery.of(
+                                                context,
+                                              ).size.width,
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.only(
+                                                  topLeft: Radius.circular(
+                                                    10.r,
+                                                  ),
+                                                  topRight: Radius.circular(
+                                                    10.r,
+                                                  ),
+                                                ),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsets.all(16.h),
+                                                child: Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    Gap(10.h),
+                                                    Text.rich(
+                                                      TextSpan(
+                                                        text: "pay_with".tr(),
+                                                        style: AppStyles.bold20(
+                                                          AppColors.black,
+                                                        ),
+                                                        children: [
+                                                          TextSpan(
+                                                            text: "loyalty"
+                                                                .tr(),
+                                                            style:
+                                                                AppStyles.bold20(
+                                                                  AppColors
+                                                                      .error,
+                                                                ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    Gap(20.h),
+                                                    Container(
+                                                      height: 240.h,
+                                                      width: 240.w,
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              10.r,
+                                                            ),
+                                                        border: Border.all(
+                                                          width: 1,
+                                                          color: Colors
+                                                              .grey
+                                                              .shade300,
+                                                        ),
+                                                      ),
+                                                      child: Image.asset(
+                                                        AppImages.scan,
+                                                      ),
+                                                    ),
+                                                    Gap(20.h),
+                                                    Text(
+                                                      "scan".tr(),
+                                                      style:
+                                                          AppStyles.regular16(
+                                                            AppColors.grey,
+                                                          ),
+                                                    ),
+                                                    Gap(10.h),
+                                                    InkWell(
+                                                      onTap: (){
+                                                        Navigator.pop(context);
+                                                      },
+                                                      child: Container(
+                                                        width: 343.w,
+                                                        height: 50.h,
+                                                        decoration: BoxDecoration(
+                                                          borderRadius: BorderRadius.circular(30.r),
+                                                          color: Colors.grey.shade300,
+                                                        ),
+                                                        child: Center(
+                                                          child: Text(
+                                                            "cancel".tr(),
+                                                            style: AppStyles.medium14(AppColors.black),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 40.h,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            25.r,
+                                          ),
+                                          color: Colors.white.withOpacity(0.3),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            "pay".tr(),
+                                            style: AppStyles.medium16(
+                                              AppColors.white,
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                      child: Center(child: Text("pay".tr(),style: AppStyles.medium16(AppColors.white),)),
-                                    )
+                                    ),
                                   ],
                                 ),
                               ),
                             ),
                             Gap(18.h),
-                            Text("how_to_earn".tr(),style: AppStyles.medium20(AppColors.black),),
+                            Text(
+                              "how_to_earn".tr(),
+                              style: AppStyles.medium20(AppColors.black),
+                            ),
+                            Gap(10.h),
                             Container(
                               width: 343.w,
                               height: 100.h,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15.r),
-                                color: Colors.grey.shade200
+                                color: Colors.grey.shade200,
                               ),
-                            )
+                              child: Padding(
+                                padding: EdgeInsets.all(16.h),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: 44.h,
+                                      width: 44.w,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                          10.r,
+                                        ),
+                                        color: Colors.white,
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(10.h),
+                                        child: SvgPicture.asset(
+                                          AppIcons.calendar,
+                                          color: AppColors.error,
+                                        ),
+                                      ),
+                                    ),
+                                    Gap(10.w),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            "visit_the_clinic".tr(),
+                                            style: AppStyles.medium16(
+                                              AppColors.black,
+                                            ),
+                                          ),
+                                          Gap(4.h),
+                                          Text(
+                                            "get_up".tr(),
+                                            softWrap: true,
+                                            style: AppStyles.regular14(
+                                              AppColors.grey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Gap(10.h),
+                            Container(
+                              width: 343.w,
+                              height: 100.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15.r),
+                                color: Colors.grey.shade200,
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(16.h),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: 44.h,
+                                      width: 44.w,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(
+                                          10.r,
+                                        ),
+                                        color: Colors.white,
+                                      ),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(10.h),
+                                        child: SvgPicture.asset(
+                                          AppIcons.user_add,
+                                          color: AppColors.error,
+                                        ),
+                                      ),
+                                    ),
+                                    Gap(10.w),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            "refer_a_friend".tr(),
+                                            style: AppStyles.medium16(
+                                              AppColors.black,
+                                            ),
+                                          ),
+                                          Gap(4.h),
+                                          Text(
+                                            "earn_50".tr(),
+                                            softWrap: true,
+                                            style: AppStyles.regular14(
+                                              AppColors.grey,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       );

@@ -177,5 +177,10 @@
   "how_to_earn" : "How to earn",
   "visit_the_clinic" : "Visit the Clinic",
   "get_up" : "Get up to 5% back in points for every consultation or procedure.",
-  "earn_50" : "Earn 50 points for every new patient you refer to us."
+  "earn_50" : "Earn 50 points for every new patient you refer to us.",
+  "points_history" : "Points History",
+  "for_inviting" : "For inviting",
+  "pay_with" : "Pay with ",
+  "loyalty" : "Loyalty Balance",
+  "scan" : "Scan this code with the clinic’s QR scanner to pay using your loyalty balance",
 }

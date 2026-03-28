@@ -25,5 +25,6 @@ class AppImages{
   static const icon = "assets/images/icon.jpg";
   static const mskt = "assets/images/mskt.png";
   static const person = "assets/images/person.png";
+  static const scan = "assets/images/scan.png";
 
 }
