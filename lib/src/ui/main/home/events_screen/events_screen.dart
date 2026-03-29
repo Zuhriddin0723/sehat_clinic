@@ -78,253 +78,247 @@ class _EventsScreenState extends State<EventsScreen> {
               },
               children: [
                 /// events
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.all(20.h),
-                    child: ListView.builder(
-                      itemCount: 2,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            InkWell(
-                              onTap: (){
-                                Navigator.push(context, MaterialPageRoute(builder: (ctx)=>EventsDetailScreen()));
-                              },
-                              child: Container(
-                                width: 343.w,
-                                height: 180.h,
-                                clipBehavior: Clip.hardEdge,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10.r),
-                                    topRight: Radius.circular(10.r),
-                                  ),
-                                ),
-                                child: Image.asset(
-                                  AppImages.image,
-                                  fit: BoxFit.cover,
+                Padding(
+                  padding: EdgeInsets.all(20.h),
+                  child: ListView.builder(
+                    itemCount: 2,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (ctx)=>EventsDetailScreen()));
+                            },
+                            child: Container(
+                              width: 343.w,
+                              height: 180.h,
+                              clipBehavior: Clip.hardEdge,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(10.r),
+                                  topRight: Radius.circular(10.r),
                                 ),
                               ),
+                              child: Image.asset(
+                                AppImages.image,
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                            Container(
-                              margin: EdgeInsets.only(bottom: 12.h),
-                              width: 343.w,
-                              height: 164,
-                              decoration: BoxDecoration(
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 12.h),
+                            width: 343.w,
+                            height: 164,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                bottomLeft: Radius.circular(10.r),
+                                bottomRight: Radius.circular(10.r),
+                              ),
+                              color: AppColors.white
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(16.h),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SvgPicture.asset(AppIcons.calendar),
+                                      Gap(4.w),
+                                      Text(
+                                        "Feb 15, 2024",
+                                        style: AppStyles.regular14(
+                                          AppColors.grey,
+                                        ),
+                                      ),
+                                      Gap(16.w),
+                                      SvgPicture.asset(AppIcons.location),
+                                      Gap(4.w),
+                                      Text(
+                                        "sehat_clinic".tr(),
+                                        style: AppStyles.regular14(
+                                          AppColors.grey,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Gap(10.h),
+                                  Text(
+                                    "heart_health_matters",
+                                    style: AppStyles.medium18(AppColors.black),
+                                  ),
+                                  Gap(6.h),
+                                  Text(
+                                    "cardiovascular_subtitle".tr(),
+                                    style: AppStyles.regular16(AppColors.grey),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ),
+
+                /// news
+                Padding(
+                  padding: EdgeInsets.all(20.h),
+                  child: ListView.builder(
+                    itemCount: 2,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          Container(
+                            width: 343.w,
+                            height: 180.h,
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10.r),
+                                topRight: Radius.circular(10.r),
+                              ),
+                            ),
+                            child: Image.asset(
+                              AppImages.image,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 12.h),
+                            width: 343.w,
+                            height: 164,
+                            decoration: BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(10.r),
                                   bottomRight: Radius.circular(10.r),
                                 ),
                                 color: AppColors.white
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(16.h),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset(AppIcons.calendar),
-                                        Gap(4.w),
-                                        Text(
-                                          "Feb 15, 2024",
-                                          style: AppStyles.regular14(
-                                            AppColors.grey,
-                                          ),
-                                        ),
-                                        Gap(16.w),
-                                        SvgPicture.asset(AppIcons.location),
-                                        Gap(4.w),
-                                        Text(
-                                          "sehat_clinic".tr(),
-                                          style: AppStyles.regular14(
-                                            AppColors.grey,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Gap(10.h),
-                                    Text(
-                                      "heart_health_matters",
-                                      style: AppStyles.medium18(AppColors.black),
-                                    ),
-                                    Gap(6.h),
-                                    Text(
-                                      "cardiovascular_subtitle".tr(),
-                                      style: AppStyles.regular16(AppColors.grey),
-                                    ),
-                                  ],
-                                ),
-                              ),
                             ),
-                          ],
-                        );
-                      },
-                    ),
-                  ),
-                ),
-
-                /// news
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.all(20.h),
-                    child: ListView.builder(
-                      itemCount: 2,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            Container(
-                              width: 343.w,
-                              height: 180.h,
-                              clipBehavior: Clip.hardEdge,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10.r),
-                                  topRight: Radius.circular(10.r),
-                                ),
-                              ),
-                              child: Image.asset(
-                                AppImages.image,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(bottom: 12.h),
-                              width: 343.w,
-                              height: 164,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(10.r),
-                                    bottomRight: Radius.circular(10.r),
+                            child: Padding(
+                              padding: EdgeInsets.all(16.h),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SvgPicture.asset(AppIcons.calendar),
+                                      Gap(4.w),
+                                      Text(
+                                        "Feb 15, 2024",
+                                        style: AppStyles.regular14(
+                                          AppColors.grey,
+                                        ),
+                                      ),
+                                      Gap(16.w),
+                                      SvgPicture.asset(AppIcons.location),
+                                      Gap(4.w),
+                                      Text(
+                                        "sehat_clinic".tr(),
+                                        style: AppStyles.regular14(
+                                          AppColors.grey,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  color: AppColors.white
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(16.h),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset(AppIcons.calendar),
-                                        Gap(4.w),
-                                        Text(
-                                          "Feb 15, 2024",
-                                          style: AppStyles.regular14(
-                                            AppColors.grey,
-                                          ),
-                                        ),
-                                        Gap(16.w),
-                                        SvgPicture.asset(AppIcons.location),
-                                        Gap(4.w),
-                                        Text(
-                                          "sehat_clinic".tr(),
-                                          style: AppStyles.regular14(
-                                            AppColors.grey,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Gap(10.h),
-                                    Text(
-                                      "heart_health_matters",
-                                      style: AppStyles.medium18(AppColors.black),
-                                    ),
-                                    Gap(6.h),
-                                    Text(
-                                      "cardiovascular_subtitle".tr(),
-                                      style: AppStyles.regular16(AppColors.grey),
-                                    ),
-                                  ],
-                                ),
+                                  Gap(10.h),
+                                  Text(
+                                    "heart_health_matters",
+                                    style: AppStyles.medium18(AppColors.black),
+                                  ),
+                                  Gap(6.h),
+                                  Text(
+                                    "cardiovascular_subtitle".tr(),
+                                    style: AppStyles.regular16(AppColors.grey),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        );
-                      },
-                    ),
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
 
                 /// blog
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.all(20.h),
-                    child: ListView.builder(
-                      itemCount: 2,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            Container(
-                              width: 343.w,
-                              height: 180.h,
-                              clipBehavior: Clip.hardEdge,
-                              decoration: BoxDecoration(
+                Padding(
+                  padding: EdgeInsets.all(20.h),
+                  child: ListView.builder(
+                    itemCount: 2,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          Container(
+                            width: 343.w,
+                            height: 180.h,
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10.r),
+                                topRight: Radius.circular(10.r),
+                              ),
+                            ),
+                            child: Image.asset(
+                              AppImages.image,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(bottom: 12.h),
+                            width: 343.w,
+                            height: 164,
+                            decoration: BoxDecoration(
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10.r),
-                                  topRight: Radius.circular(10.r),
+                                  bottomLeft: Radius.circular(10.r),
+                                  bottomRight: Radius.circular(10.r),
                                 ),
-                              ),
-                              child: Image.asset(
-                                AppImages.image,
-                                fit: BoxFit.cover,
-                              ),
+                                color: AppColors.white
                             ),
-                            Container(
-                              margin: EdgeInsets.only(bottom: 12.h),
-                              width: 343.w,
-                              height: 164,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(10.r),
-                                    bottomRight: Radius.circular(10.r),
+                            child: Padding(
+                              padding: EdgeInsets.all(16.h),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      SvgPicture.asset(AppIcons.calendar),
+                                      Gap(4.w),
+                                      Text(
+                                        "Feb 15, 2024",
+                                        style: AppStyles.regular14(
+                                          AppColors.grey,
+                                        ),
+                                      ),
+                                      Gap(16.w),
+                                      SvgPicture.asset(AppIcons.location),
+                                      Gap(4.w),
+                                      Text(
+                                        "sehat_clinic".tr(),
+                                        style: AppStyles.regular14(
+                                          AppColors.grey,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  color: AppColors.white
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(16.h),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        SvgPicture.asset(AppIcons.calendar),
-                                        Gap(4.w),
-                                        Text(
-                                          "Feb 15, 2024",
-                                          style: AppStyles.regular14(
-                                            AppColors.grey,
-                                          ),
-                                        ),
-                                        Gap(16.w),
-                                        SvgPicture.asset(AppIcons.location),
-                                        Gap(4.w),
-                                        Text(
-                                          "sehat_clinic".tr(),
-                                          style: AppStyles.regular14(
-                                            AppColors.grey,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Gap(10.h),
-                                    Text(
-                                      "heart_health_matters".tr(),
-                                      style: AppStyles.medium18(AppColors.black),
-                                    ),
-                                    Gap(6.h),
-                                    Text(
-                                      "cardiovascular_subtitle".tr(),
-                                      style: AppStyles.regular16(AppColors.grey),
-                                    ),
-                                  ],
-                                ),
+                                  Gap(10.h),
+                                  Text(
+                                    "heart_health_matters".tr(),
+                                    style: AppStyles.medium18(AppColors.black),
+                                  ),
+                                  Gap(6.h),
+                                  Text(
+                                    "cardiovascular_subtitle".tr(),
+                                    style: AppStyles.regular16(AppColors.grey),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        );
-                      },
-                    ),
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ),
               ],

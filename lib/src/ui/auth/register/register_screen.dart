@@ -5,6 +5,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart'; // 1. Import
 import 'package:sehat_clinic/src/ui/auth/register/accaunt/account_screen.dart';
+import 'package:sehat_clinic/src/ui/auth/verfy/verification_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../../app_theme/appStyles/app_styles.dart';
 import '../../../app_theme/app_colors/app_colors.dart';
@@ -127,7 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             onTap: () async{
               final SharedPreferences prefs = await SharedPreferences.getInstance();
               await prefs.setBool('register', true);
-              Navigator.push(context, MaterialPageRoute(builder: (ctx)=>AccountScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (ctx)=>VerificationScreen()));
             },
           ),
           Gap(34.h)

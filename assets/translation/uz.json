@@ -191,5 +191,12 @@
   "for_inviting" : "Taklif qilish uchun",
   "pay_with" : "Bilan to'lang ",
   "loyalty" : "Sadoqat balansi",
-  "scan": "Sodiqlik balansingizdan foydalanib to'lash uchun ushbu kodni klinikaning QR skaneri bilan skanerlang"
+  "scan": "Sodiqlik balansingizdan foydalanib to'lash uchun ushbu kodni klinikaning QR skaneri bilan skanerlang",
+  "together_to_health" : "Sog'liq uchun birgalikda!",
+  "invite" : "Do'stlaringizni klinikamizga taklif qiling. Ular birinchi uchrashuvni band qilishganda, siz ikkalangiz ham keyingi xizmatlar uchun 10% chegirmaga ega bo'lasizlar.",
+  "copy_and_share" : "Kodingizni nusxalash va ulashish",
+  "or_invite" : "Yoki taklif qilish orqali",
+  "nickname" : "Lax",
+  "joined" : "Qo'shilgan",
+  "invite_friend" : "Taklif qilingan do'stlar:"
 }

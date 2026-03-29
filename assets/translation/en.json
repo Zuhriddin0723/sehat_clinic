@@ -183,4 +183,11 @@
   "pay_with" : "Pay with ",
   "loyalty" : "Loyalty Balance",
   "scan" : "Scan this code with the clinic’s QR scanner to pay using your loyalty balance",
+  "together_to_health" : "Together to Health!",
+  "invite" : "Invite your friends to our clinic. When they book their first appointment, you both get a 10% discount on next services.",
+  "copy_and_share" : "Copy and share your code",
+  "or_invite" : "Or Invite by",
+  "nickname" : "Nickname",
+  "joined" : "Joined",
+  "invite_friend" : "Invited Friends:"
 }

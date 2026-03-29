@@ -26,5 +26,10 @@ class AppImages{
   static const mskt = "assets/images/mskt.png";
   static const person = "assets/images/person.png";
   static const scan = "assets/images/scan.png";
+  static const telegram = "assets/images/telegram.png";
+  static const x = "assets/images/x.png";
+  static const whatsup = "assets/images/whatsup.png";
+  static const instagram = "assets/images/instagram.png";
+  static const face_book = "assets/images/face_book.png";
 
 }

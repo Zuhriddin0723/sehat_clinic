@@ -8,6 +8,7 @@ import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/ui/main/home/events_screen/events_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/points_history/points_history_screen.dart';
+import 'package:sehat_clinic/src/ui/main/home/refer_a_friend/refer_a_friend_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/story_screen/story_screen.dart';
 import 'package:sehat_clinic/src/widget/buton_widget.dart';
 
@@ -631,20 +632,29 @@ class _HomePageState extends State<HomePage> {
                                                     ),
                                                     Gap(10.h),
                                                     InkWell(
-                                                      onTap: (){
+                                                      onTap: () {
                                                         Navigator.pop(context);
                                                       },
                                                       child: Container(
                                                         width: 343.w,
                                                         height: 50.h,
                                                         decoration: BoxDecoration(
-                                                          borderRadius: BorderRadius.circular(30.r),
-                                                          color: Colors.grey.shade300,
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                30.r,
+                                                              ),
+                                                          color: Colors
+                                                              .grey
+                                                              .shade300,
                                                         ),
                                                         child: Center(
                                                           child: Text(
                                                             "cancel".tr(),
-                                                            style: AppStyles.medium14(AppColors.black),
+                                                            style:
+                                                                AppStyles.medium14(
+                                                                  AppColors
+                                                                      .black,
+                                                                ),
                                                           ),
                                                         ),
                                                       ),
@@ -743,60 +753,72 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Gap(10.h),
-                            Container(
-                              width: 343.w,
-                              height: 100.h,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15.r),
-                                color: Colors.grey.shade200,
-                              ),
-                              child: Padding(
-                                padding: EdgeInsets.all(16.h),
-                                child: Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                      height: 44.h,
-                                      width: 44.w,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                          10.r,
-                                        ),
-                                        color: Colors.white,
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsets.all(10.h),
-                                        child: SvgPicture.asset(
-                                          AppIcons.user_add,
-                                          color: AppColors.error,
-                                        ),
-                                      ),
-                                    ),
-                                    Gap(10.w),
-                                    Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: [
-                                          Text(
-                                            "refer_a_friend".tr(),
-                                            style: AppStyles.medium16(
-                                              AppColors.black,
-                                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (ctx) => ReferAFriendScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                width: 343.w,
+                                height: 100.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15.r),
+                                  color: Colors.grey.shade200,
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(16.h),
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                        height: 44.h,
+                                        width: 44.w,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            10.r,
                                           ),
-                                          Gap(4.h),
-                                          Text(
-                                            "earn_50".tr(),
-                                            softWrap: true,
-                                            style: AppStyles.regular14(
-                                              AppColors.grey,
-                                            ),
+                                          color: Colors.white,
+                                        ),
+                                        child: Padding(
+                                          padding: EdgeInsets.all(10.h),
+                                          child: SvgPicture.asset(
+                                            AppIcons.user_add,
+                                            color: AppColors.error,
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                      Gap(10.w),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text(
+                                              "refer_a_friend".tr(),
+                                              style: AppStyles.medium16(
+                                                AppColors.black,
+                                              ),
+                                            ),
+                                            Gap(4.h),
+                                            Text(
+                                              "earn_50".tr(),
+                                              softWrap: true,
+                                              style: AppStyles.regular14(
+                                                AppColors.grey,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
