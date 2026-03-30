@@ -38,7 +38,7 @@ class _EditProfileState extends State<EditProfile> {
   void _checkFields() {
     final isFilled = controllerName.text.trim().isNotEmpty &&
         controllerLastName.text.trim().isNotEmpty &&
-        controllerPhoneNumber.text.length == 13;
+        controllerPhoneNumber.text.length == 17;
 
     setState(() {
       isActive = isFilled;

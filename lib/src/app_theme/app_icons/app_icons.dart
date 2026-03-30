@@ -56,4 +56,5 @@ class AppIcons{
   static const camera = "assets/icons/camera.svg";
   static const user_add = "assets/icons/user_add.svg";
   static const copy = "assets/icons/copy.svg";
+  static const notification2 = "assets/icons/notification.svg";
 }

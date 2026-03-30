@@ -138,7 +138,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                     padding: EdgeInsets.all(8.h),
                                     child: Row(
                                       children: [
-                                        SvgPicture.asset(AppIcons.calendar),
+                                        SvgPicture.asset(AppIcons.calendar,color: AppColors.black,),
                                         Gap(5.w),
                                         Text(
                                           "Feb.15",
@@ -160,12 +160,6 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                               7.r,
                                             ),
                                             color: Colors.white,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.black12,
-                                                blurRadius: 10,
-                                              ),
-                                            ],
                                           ),
                                           child: Row(
                                             crossAxisAlignment:
@@ -173,11 +167,11 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              Image.asset(AppIcons.file),
+                                              Image.asset(AppIcons.file,color: Color(0xFF001E62),),
                                               Gap(5.w),
                                               Text(
                                                 "view".tr(),
-                                                style: AppStyles.medium12(AppColors.black)
+                                                style: AppStyles.medium12(Color(0xFF001E62))
                                               ),
                                             ],
                                           ),
@@ -273,14 +267,14 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                     padding: const EdgeInsets.all(10),
                                     child: Row(
                                       children: [
-                                        SvgPicture.asset(AppIcons.calendar),
+                                        SvgPicture.asset(AppIcons.calendar,color: AppColors.black,),
                                         Gap(5.w),
                                         Text(
                                           "Feb.14",
                                           style: AppStyles.medium12(AppColors.black),
                                         ),
                                         Gap(10.w),
-                                        Image.asset(AppIcons.clock),
+                                        Image.asset(AppIcons.clock,color: AppColors.black,),
                                         Gap(2.w),
                                         Text(
                                           "1.5 hours",
@@ -295,12 +289,6 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                               10.r,
                                             ),
                                             color: Colors.white,
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: Colors.black12,
-                                                blurRadius: 10,
-                                              ),
-                                            ],
                                           ),
                                           child: Row(
                                             mainAxisAlignment:
@@ -313,7 +301,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                               Gap(3.w),
                                               Text(
                                                 "view".tr(),
-                                                style: AppStyles.medium12(AppColors.black),
+                                                style: AppStyles.medium12(Color(0xFF001E62)),
                                               ),
                                             ],
                                           ),
@@ -392,14 +380,14 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                   padding: EdgeInsets.all(10.h),
                                   child: Row(
                                     children: [
-                                      SvgPicture.asset(AppIcons.calendar),
+                                      SvgPicture.asset(AppIcons.calendar,color: AppColors.black,),
                                       Gap(5.w),
                                       Text(
                                         "Feb.14",
                                         style: AppStyles.medium12(AppColors.black),
                                       ),
                                       Gap(10.w),
-                                      Image.asset(AppIcons.clock),
+                                      Image.asset(AppIcons.clock,color: AppColors.black,),
                                       Gap(2.w),
                                       Text(
                                         "1.5 hours",
@@ -414,12 +402,6 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                             10.r,
                                           ),
                                           color: Colors.white,
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Colors.black12,
-                                              blurRadius: 10,
-                                            ),
-                                          ],
                                         ),
                                         child: Row(
                                           mainAxisAlignment:
@@ -432,7 +414,7 @@ class _MyBookingsScreenState extends State<MyBookingsScreen> {
                                             Gap(3.w),
                                             Text(
                                               "view".tr(),
-                                              style: AppStyles.medium12(AppColors.black),
+                                              style: AppStyles.medium12(Color(0xFF001E62)),
                                             ),
                                           ],
                                         ),

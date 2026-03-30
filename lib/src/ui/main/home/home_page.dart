@@ -7,6 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/ui/main/home/events_screen/events_screen.dart';
+import 'package:sehat_clinic/src/ui/main/home/notification/notification_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/points_history/points_history_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/refer_a_friend/refer_a_friend_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/story_screen/story_screen.dart';
@@ -130,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.all(10.h),
                           child: Row(
                             children: [
-                              SvgPicture.asset(AppIcons.calendar),
+                              SvgPicture.asset(AppIcons.calendar,color: AppColors.black,),
                               Gap(5.w),
                               Text(
                                 "Feb.14",
@@ -156,7 +157,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Image.asset(
                                       AppIcons.file,
-                                      color: Color(0xFF001E62),
+                                      color: AppColors.black,
                                     ),
                                     Gap(3.w),
                                     Text(
@@ -247,7 +248,7 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Row(
                                   children: [
-                                    SvgPicture.asset(AppIcons.calendar),
+                                    SvgPicture.asset(AppIcons.calendar,color: AppColors.black),
                                     Gap(5.w),
                                     Text(
                                       "${"feb".tr()} 15, 2024",
@@ -865,7 +866,11 @@ class _HomePageState extends State<HomePage> {
       actions: [
         Padding(
           padding: EdgeInsets.only(right: 16.w),
-          child: Image.asset(AppIcons.notification),
+          child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (ctx)=> NotificationScreen()));
+              },
+              child: Image.asset(AppIcons.notification)),
         ),
       ],
       bottom: PreferredSize(

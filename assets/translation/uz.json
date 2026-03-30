@@ -198,5 +198,6 @@
   "or_invite" : "Yoki taklif qilish orqali",
   "nickname" : "Lax",
   "joined" : "Qo'shilgan",
-  "invite_friend" : "Taklif qilingan do'stlar:"
+  "invite_friend" : "Taklif qilingan do'stlar:",
+  "notification" : "Xabarnoma"
 }

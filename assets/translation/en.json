@@ -189,5 +189,6 @@
   "or_invite" : "Or Invite by",
   "nickname" : "Nickname",
   "joined" : "Joined",
-  "invite_friend" : "Invited Friends:"
+  "invite_friend" : "Invited Friends:",
+  "notification" : "Notification"
 }

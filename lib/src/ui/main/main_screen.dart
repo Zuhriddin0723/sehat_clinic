@@ -7,6 +7,7 @@ import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
 import 'package:sehat_clinic/src/app_theme/app_icons/app_icons.dart';
 import 'package:sehat_clinic/src/ui/main/analyses/analyses_screen.dart';
 import 'package:sehat_clinic/src/ui/main/edit_profile/edit_profile.dart';
+import 'package:sehat_clinic/src/ui/splash/splash_screen.dart';
 import '../../app_theme/appStyles/app_styles.dart';
 import '../../app_theme/app_images/app_images.dart';
 import 'home/home_page.dart';
@@ -150,9 +151,18 @@ class _MainScreenState extends State<MainScreen> {
                 children: [
                   SvgPicture.asset(AppIcons.logout),
                   Gap(10.w),
-                  Text(
-                    "log_out".tr(),
-                    style: AppStyles.regular16(AppColors.error),
+                  InkWell(
+                    onTap: (){
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => SplashScreen()),
+                            (Route<dynamic> route) => false,
+                      );
+                    },
+                    child: Text(
+                      "log_out".tr(),
+                      style: AppStyles.regular16(AppColors.error),
+                    ),
                   ),
                 ],
               ),
