@@ -2,8 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sehat_clinic/src/ui/main/main_screen.dart';
-import 'package:sehat_clinic/src/ui/main/services/service_screen.dart';
 import 'package:sehat_clinic/src/ui/splash/splash_screen.dart';
 
 void main() async {
@@ -27,11 +25,10 @@ void main() async {
   runApp(
     EasyLocalization(
       supportedLocales: const [
-        Locale('uz'),
-        Locale('ru'),
         Locale('en'),
       ],
       path: 'assets/translation',
+      startLocale: Locale('en'),
       fallbackLocale: const Locale('en'),
       child: MyApp(),
     ),

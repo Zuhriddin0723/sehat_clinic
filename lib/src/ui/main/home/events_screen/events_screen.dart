@@ -44,7 +44,7 @@ class _EventsScreenState extends State<EventsScreen> {
           },
           child: Icon(Icons.chevron_left_sharp),
         ),
-        title: Text("events".tr(), style: AppStyles.medium16(AppColors.black)),
+        title: Text("all".tr(), style: AppStyles.medium16(AppColors.black)),
         centerTitle: true,
       ),
       body: Column(
@@ -144,7 +144,7 @@ class _EventsScreenState extends State<EventsScreen> {
                                   ),
                                   Gap(10.h),
                                   Text(
-                                    "heart_health_matters",
+                                    "heart_health_matters".tr(),
                                     style: AppStyles.medium18(AppColors.black),
                                   ),
                                   Gap(6.h),
@@ -224,7 +224,7 @@ class _EventsScreenState extends State<EventsScreen> {
                                   ),
                                   Gap(10.h),
                                   Text(
-                                    "heart_health_matters",
+                                    "heart_health_matters".tr(),
                                     style: AppStyles.medium18(AppColors.black),
                                   ),
                                   Gap(6.h),

@@ -84,7 +84,7 @@ class _ViewDetailsCompleteState extends State<ViewDetailsComplete> {
                           padding: const EdgeInsets.all(10),
                           child: Row(
                             children: [
-                              Image.asset(AppIcons.calendar),
+                              SvgPicture.asset(AppIcons.calendar,color: AppColors.black,),
                               Gap(5.w),
                               Text("Feb.15", style: AppStyles.medium12(AppColors.black)),
                               Gap(13.w),

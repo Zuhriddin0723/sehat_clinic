@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,21 +52,32 @@ class _MainScreenState extends State<MainScreen> {
       body: IndexedStack(index: currentIndex, children: screens),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(bottom: 30.h, left: 16.w, right: 16.w),
-        child: Container(
-          height: 70,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.7),
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _item(0, "home".tr()),
-              _item(1, "services".tr()),
-              _item(2, "booking".tr()),
-              _item(3, "analyses".tr()),
-              _item(4, "chat".tr()),
-            ],
+        child: ClipRRect( // 1. Blur chegaradan chiqib ketmasligi uchun
+          borderRadius: BorderRadius.circular(25),
+          child: BackdropFilter( // 2. Blur effektini beruvchi vidjet
+            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // Xiralik darajasi
+            child: Container(
+              height: 70,
+              decoration: BoxDecoration(
+                // 3. Rangni juda shaffof qilish kerak (0.1 - 0.3 atrofida)
+                color: Colors.white.withOpacity(0.2),
+                borderRadius: BorderRadius.circular(25),
+                border: Border.all( // 4. Glassmorphism effekti uchun ingichka chegara
+                  color: Colors.white.withOpacity(0.2),
+                  width: 1.5,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  _item(0, "home".tr()),
+                  _item(1, "services".tr()),
+                  _item(2, "booking".tr()),
+                  _item(3, "analyses".tr()),
+                  _item(4, "chat".tr()),
+                ],
+              ),
+            ),
           ),
         ),
       ),

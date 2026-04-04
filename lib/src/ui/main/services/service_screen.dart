@@ -24,7 +24,7 @@ class ServiceScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.h),
+          padding: EdgeInsets.all(16.h),
           child: Column(
             children: [
               Row(
@@ -85,7 +85,7 @@ class ServiceScreen extends StatelessWidget {
 
   Widget _createServices(String text, String img,int height,int width) {
     return Container(
-      width: 160.w,
+      width: 166.w,
       height: 115.h,
       decoration: BoxDecoration(
         color: Colors.white,

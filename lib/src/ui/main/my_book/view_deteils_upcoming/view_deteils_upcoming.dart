@@ -78,7 +78,7 @@ class ViewDetailsUpcoming extends StatelessWidget {
                           padding: const EdgeInsets.all(10),
                           child: Row(
                             children: [
-                              Image.asset(AppIcons.calendar),
+                              SvgPicture.asset(AppIcons.calendar,color: AppColors.black,),
                               Gap(5.w),
                               Text("Feb.15", style: AppStyles.medium12(AppColors.black)),
                               Gap(13.w),
@@ -267,7 +267,7 @@ class ViewDetailsUpcoming extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.asset(AppIcons.calendar,color: Colors.white,height: 23.h,),
+                      SvgPicture.asset(AppIcons.calendar,color: Colors.white,height: 23.h,),
                       Gap(5.w),
                       Text(
                         "reschedule".tr(),

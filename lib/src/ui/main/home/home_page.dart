@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:sehat_clinic/src/app_theme/appStyles/app_styles.dart';
 import 'package:sehat_clinic/src/app_theme/app_colors/app_colors.dart';
+import 'package:sehat_clinic/src/ui/main/home/events_screen/events_detail_screen/events_detail_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/events_screen/events_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/notification/notification_screen.dart';
 import 'package:sehat_clinic/src/ui/main/home/points_history/points_history_screen.dart';
@@ -69,7 +70,12 @@ class _HomePageState extends State<HomePage> {
 
             /// doctor card
             Padding(
-              padding: EdgeInsets.all(20.h),
+              padding: EdgeInsets.only(
+                left: 15.w,
+                right: 15.w,
+                bottom: 10.h,
+                top: 12.h,
+              ),
               child: Container(
                 width: 343.w,
                 height: 162.h,
@@ -131,7 +137,10 @@ class _HomePageState extends State<HomePage> {
                           padding: EdgeInsets.all(10.h),
                           child: Row(
                             children: [
-                              SvgPicture.asset(AppIcons.calendar,color: AppColors.black,),
+                              SvgPicture.asset(
+                                AppIcons.calendar,
+                                color: AppColors.black,
+                              ),
                               Gap(5.w),
                               Text(
                                 "Feb.14",
@@ -178,10 +187,16 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            Divider(color:Color(0xEEE2E8F0),),
             Padding(
-              padding: EdgeInsets.only(left: 20.w, right: 20.w),
+              padding: EdgeInsets.only(left: 14.w, right: 8.w,top: 16.h),
               child: Row(
                 children: [
+                  Text(
+                    "events".tr(),
+                    style: AppStyles.semiBold14(AppColors.black),
+                  ),
+                  Spacer(),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -189,14 +204,6 @@ class _HomePageState extends State<HomePage> {
                         MaterialPageRoute(builder: (ctx) => EventsScreen()),
                       );
                     },
-                    child: Text(
-                      "events".tr(),
-                      style: AppStyles.semiBold14(AppColors.black),
-                    ),
-                  ),
-                  const Spacer(),
-                  TextButton(
-                    onPressed: () {},
                     child: Text(
                       "all".tr(),
                       style: AppStyles.regular14(AppColors.primaryBright),
@@ -217,19 +224,29 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: 15.w),
                     child: Column(
                       children: [
-                        Container(
-                          width: 200.w,
-                          height: 133.h,
-                          clipBehavior: Clip.hardEdge,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(10.r),
-                              topLeft: Radius.circular(10.r),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (ctx) => EventsDetailScreen(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            width: 200.w,
+                            height: 133.h,
+                            clipBehavior: Clip.hardEdge,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(10.r),
+                                topLeft: Radius.circular(10.r),
+                              ),
                             ),
-                          ),
-                          child: Image.asset(
-                            AppImages.image,
-                            fit: BoxFit.cover,
+                            child: Image.asset(
+                              AppImages.image,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Container(
@@ -248,7 +265,10 @@ class _HomePageState extends State<HomePage> {
                               children: [
                                 Row(
                                   children: [
-                                    SvgPicture.asset(AppIcons.calendar,color: AppColors.black),
+                                    SvgPicture.asset(
+                                      AppIcons.calendar,
+                                      color: AppColors.black,
+                                    ),
                                     Gap(5.w),
                                     Text(
                                       "${"feb".tr()} 15, 2024",
@@ -277,87 +297,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Gap(50.h),
-          ],
-        ),
-      ),
-      drawer: Drawer(
-        width: 320.w,
-        backgroundColor: AppColors.white,
-        child: Column(
-          children: [
-            Gap(40.h),
-            Container(
-              height: 96.h,
-              width: 96.w,
-              child: Image.asset(AppImages.person),
-            ),
-            Gap(8.h),
-            Text("Sarah Johnson", style: AppStyles.medium16(AppColors.black)),
-            Gap(4.h),
-            Text("ID : 1233455", style: AppStyles.regular14(AppColors.grey)),
-            Gap(12.h),
-            Container(
-              width: 288.w,
-              height: 288.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.r),
-                color: Colors.grey.shade100,
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(13.h),
-                child: Column(
-                  children: [
-                    _drawer(AppIcons.home, "home".tr(), false),
-                    Gap(5.h),
-                    Divider(color: Colors.grey.shade300),
-                    Gap(5.h),
-                    _drawer(AppIcons.user, "edit_profile".tr(), false),
-                    Gap(5.h),
-                    Divider(color: Colors.grey.shade300),
-                    Gap(5.h),
-                    _drawer(AppIcons.language, "language".tr(), true),
-                    Gap(5.h),
-                    Divider(color: Colors.grey.shade300),
-                    Gap(5.h),
-                    _drawer(AppIcons.support, "support".tr(), false),
-                    Gap(5.h),
-                    Divider(color: Colors.grey.shade300),
-                    Gap(5.h),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          AppIcons.gift,
-                          color: AppColors.black,
-                          height: 25,
-                        ),
-                        Gap(12.w),
-                        Text(
-                          "refer_a_friend".tr(),
-                          style: AppStyles.regular16(AppColors.black),
-                        ),
-                      ],
-                    ),
-                    Gap(5.h),
-                    Divider(color: Colors.grey.shade300),
-                    Gap(5.h),
-                    _drawer(AppIcons.i_, "about_application".tr(), false),
-                  ],
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: Row(
-                children: [
-                  SvgPicture.asset(AppIcons.logout),
-                  Gap(10.w),
-                  Text(
-                    "logout".tr(),
-                    style: AppStyles.regular16(AppColors.error),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
@@ -867,14 +806,18 @@ class _HomePageState extends State<HomePage> {
         Padding(
           padding: EdgeInsets.only(right: 16.w),
           child: InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (ctx)=> NotificationScreen()));
-              },
-              child: Image.asset(AppIcons.notification)),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (ctx) => NotificationScreen()),
+              );
+            },
+            child: Image.asset(AppIcons.notification),
+          ),
         ),
       ],
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(70.h),
+        preferredSize: Size.fromHeight(55.h),
         child: Container(
           padding: EdgeInsets.only(left: 16.w, right: 16.w, bottom: 15.h),
           child: Container(
@@ -909,15 +852,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _drawer(String icon, String name, bool a) {
-    return Row(
-      children: [
-        SvgPicture.asset(icon, color: AppColors.black),
-        Gap(12.w),
-        Text(name, style: AppStyles.regular16(AppColors.black)),
-        Spacer(),
-        a ? SvgPicture.asset(AppIcons.chevron_down) : Text(""),
-      ],
-    );
-  }
 }

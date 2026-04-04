@@ -40,20 +40,22 @@ class ServiceDetailScreen extends StatelessWidget {
           child: Column(
             children: [
               Container(
+                width: 343.w,
                 height: 200.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding:  EdgeInsets.all(10.w),
+                  padding:  EdgeInsets.only(left: 12.w,top: 16.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("stamatology".tr(), style: AppStyles.medium16(AppColors.black)),
                       Gap(10.h),
                       Container(
-                        height: 146.w,
+                        width: 319.w,
+                        height: 136.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.r),
                           color: Colors.grey.shade100,
@@ -72,13 +74,14 @@ class ServiceDetailScreen extends StatelessWidget {
               ),
               Gap(20.h),
               Container(
+                width: 343.w,
                 height: 522.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding:  EdgeInsets.all(10.w),
+                  padding: EdgeInsets.only(top: 16.h,left: 12.w,right: 12.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -86,6 +89,7 @@ class ServiceDetailScreen extends StatelessWidget {
                         "meet_our_doctors".tr(),
                         style: AppStyles.medium16(AppColors.black),
                       ),
+                      Gap(8.h),
                       InkWell(
                         onTap: () {
                           Navigator.push(
@@ -127,12 +131,14 @@ class ServiceDetailScreen extends StatelessWidget {
               ),
               Gap(20.h),
               Container(
+                height: 177.h,
+                width: 343.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.sp),
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(15.w),
+                  padding: EdgeInsets.only(top: 16.h,left: 12.w,bottom: 12.h,right: 12.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -146,7 +152,7 @@ class ServiceDetailScreen extends StatelessWidget {
                             },
                             child: Container(
                               height: 115.h,
-                              width: 147.w,
+                              width: 154.w,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8.r),
                                 color: Colors.grey[200],
@@ -220,12 +226,14 @@ class ServiceDetailScreen extends StatelessWidget {
               ),
               Gap(20.h),
               Container(
+                width: 343.w,
+                height: 214.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(10.w),
+                  padding: EdgeInsets.only(top:16.h,left: 12.w,bottom: 12.h,right: 12.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -261,12 +269,14 @@ class ServiceDetailScreen extends StatelessWidget {
               ),
               Gap(20.h),
               Container(
+                height: 710.h,
+                width: 343.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding:  EdgeInsets.all(12.5.h),
+                  padding:  EdgeInsets.only(top:16.h,left: 12.w,right: 12.w,bottom: 12.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -301,7 +311,7 @@ class ServiceDetailScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Gap(15.h),
+                      Gap(10.h),
                       Container(
                         height: 319.h,
                         decoration: BoxDecoration(
@@ -313,7 +323,7 @@ class ServiceDetailScreen extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
-                      Gap(15.h),
+                      Gap(10.h),
                       Row(
                         children: [
                           Container(
@@ -350,13 +360,15 @@ class ServiceDetailScreen extends StatelessWidget {
               Gap(15.h),
               /// location
               Container(
+                height: 524.h,
+                width: 343.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15.r),
                   color: Colors.white,
                 ),
                 clipBehavior: Clip.hardEdge,
                 child: Padding(
-                  padding:  EdgeInsets.all(10),
+                  padding:  EdgeInsets.only(top: 16.h,left: 12.w,right: 12.w,bottom: 12.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
